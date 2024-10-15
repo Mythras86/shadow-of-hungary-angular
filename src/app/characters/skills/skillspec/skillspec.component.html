@@ -1,0 +1,47 @@
+<app-hide-content
+[keyWord]="spec.nev+i+j"
+[arrowColor]="'nprpl'"
+[arrowBefore]="true"
+>
+  <div headText class="flexCont">
+
+    <div class="nprpl text1 flex1">
+      {{spec.nev}}
+    </div>
+
+    <app-special-field class="w20"
+    [ertek]="spec.szint + skillSzint + attrBonus"
+    [tipus]="'szint'"
+    [egyeniSzin]="'ngrn'"
+    ></app-special-field>
+
+  </div>
+
+  <div itemCont class="flexCont w100">
+
+    <div class="w60 nbl text1">Aktuális Szint</div>
+    <app-special-field class="w40"
+    [ertek]="spec.szint"
+    [tipus]="'szint'"
+    ></app-special-field>
+
+    <div class="w60 nbl text1">Szakértelem Szint</div>
+    <app-special-field class="w40"
+    [ertek]="skillSzint"
+    [tipus]="'szint'"
+    ></app-special-field>
+
+    <div class="w60 nbl text1">Tulajdonság Szint</div>
+    <app-special-field class="w40"
+    [ertek]="attrBonus"
+    [tipus]="'szint'"
+    ></app-special-field>
+
+    <div class="buttonCont w100 btnBack">
+      <button *ngIf="spec.szint < kapTulSzint" class="text1 itemGet" type="button" (click)="specLvlUp()" >Szintlépés</button>
+      <button class="text1 itemRemove" type="button" (click)="s.removeSpec(skillCsoport, i, j)">Törlés</button>
+    </div>
+  </div>
+
+</app-hide-content>
+

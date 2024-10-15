@@ -1,0 +1,39 @@
+<div class="ntl text2 center w90" >
+  Eszközök
+</div>
+
+<!-- visszagomb -->
+<button class="itemRemove text1 w10 center" type="button" (click)="onClose()">X</button>
+
+<!-- lista -->
+<div class="flexCont">
+  <div class="text1 center nprpl w100" (click)="setFilter('')">X Nincs</div>
+  <div class="flexCont flex2" *ngFor="let elem of csoportok">
+    <div class="text1 center nprpl w100" (click)="setFilter(elem)">{{elem}}</div>
+  </div>
+</div>
+
+<!-- csoportokra bontás -->
+<div class="w100" *ngFor="let csoport of csoportok">
+
+  <h3 [hidden]="filter != csoport && filter != ''" class="margTop1 center">{{csoport}}</h3>
+
+  <!-- típusokra bontás -->
+  <div [hidden]="filter != csoport && filter != ''" *ngFor="let tipus of getTipusok(csoport)">
+
+    <h3 class="margTop1 nbl">{{tipus}}</h3>
+
+    <div class="margTop1" *ngFor="let item of itemsList; let i = index">
+      <app-item *ngIf="item.csoport == csoport && item.tipus == tipus"
+        [item]="item"
+        >
+        <div class="buttonCont btnBack">
+          <button type="button" class="itemGet text1" (click)="onSave(item)">Kiválaszt</button>
+        </div>
+      </app-item>
+
+    </div>
+
+  </div>
+
+</div>

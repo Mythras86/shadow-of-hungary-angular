@@ -1,0 +1,85 @@
+.flexCont {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.flexContNoWrap {
+  display: flex;
+  flex-flow: row nowrap;
+  align-content: flex-start;
+  width: 100%;
+}
+
+.flex1 {
+  flex: 1 1 auto;
+}
+
+.flex2 {
+  flex: 2 2 50%;
+}
+
+.w10 {
+  flex: 0 0 10%;
+}
+.w15 {
+  flex: 0 0 15%;
+}
+.w20 {
+  flex: 0 0 20%;
+}
+.w25 {
+  flex: 0 0 25%;
+}
+.w30 {
+  flex: 0 0 30%;
+}
+.w33 {
+  flex: 0 0 33.3%;
+}
+.w40 {
+  flex: 0 0 40%;
+}
+.w50 {
+  flex: 0 0 50%;
+}
+.w60 {
+  flex: 0 0 60%;
+}
+.w66 {
+  flex: 0 0 66%;
+}
+.w70 {
+  flex: 0 0 70%;
+}
+.w75 {
+  flex: 0 0 75%;
+}
+.w80 {
+  flex: 0 0 80%;
+}
+.w85 {
+  flex: 0 0 85%;
+}
+.w90 {
+  flex: 0 0 90%;
+}
+.w100 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.mainCont {
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+app-footer{
+  width: 100%;
+  margin-top: auto;
+}
+

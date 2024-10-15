@@ -1,0 +1,31 @@
+<form id="userLogin" class="bgreen margTop1 flexCont" [formGroup]="userLoginForm" (ngSubmit)="onLogin()">
+
+  <p class="fwhite">"Tudod a szabályokat: lőj pontosan, spórolj a skulóval és soha, de SOHA ne üzletelj egy Sárkánnyal!"</p>
+
+  <div class="w80">
+    <label class="fwhite" for="loginEmail">Email Cím</label>
+    <input id="loginEmail" type="email" formControlName="email" placeholder="E-amil cím">
+    <label class="fwhite" for="loginPass">Jelszó</label>
+    <input id="loginPass" type="password" formControlName="pass" placeholder="Jelszó">
+  </div>
+
+  <button class="w50 itemGet margTop1 margBott1" type="submit" [disabled]="!userLoginForm.valid">Belépés</button>
+
+</form>
+
+<form id="userReg" class="bred margTop1 flexCont" [formGroup]="userRegForm" (ngSubmit)="onSubmit()">
+
+  <p class="fwhite">"Csatlakozz az Árnyakhoz, de sose feledd: ha túl mélyen meredsz a sötétségbe, az visszatekint majd rád!"</p>
+
+  <div class="w80">
+    <label class="fwhite" for="regNev">Felhasználónév</label>
+    <input id="regNev" type="text1" formControlName="name" placeholder="Név">
+    <label class="fwhite" for="regEmail">Email Cím</label>
+    <input id="regEmail" type="email" formControlName="email" placeholder="E-amil cím">
+    <label class="fwhite" for="regPass">Jelszó</label>
+    <input id="regPass" type="password" formControlName="pass" placeholder="Jelszó">
+  </div>
+
+  <button class="w50 itemGet margTop1 margBott1" type="submit" [disabled]="!userRegForm.valid">Regisztráció</button>
+
+</form>

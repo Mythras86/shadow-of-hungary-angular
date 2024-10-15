@@ -1,0 +1,46 @@
+<div *ngIf="menuOpen == false" class="icon itemEdit center" (click)="openMenu()">&#9881;</div>
+
+<div *ngIf="menuOpen == true" class="menu" (click)="closeMenu()">
+  <div class="menuCont flexCont">
+
+    <!-- fejléc -->
+    <div class="ntl text2 center w90">
+      Karakter menü
+    </div>
+
+    <!-- visszagomb -->
+    <button class="itemRemove text1 w10 center" type="button" (click)="closeMenu()">X</button>
+
+    <!-- karakterlap szűrők -->
+
+    <div class="text1 center nprpl w100" (click)="mainS.setFilter('')">X Nincs</div>
+    <div class="text1 center nprpl flex1" (click)="mainS.setFilter('Jellemzők')">Jellemzők</div>
+    <div class="text1 center nprpl flex1" (click)="mainS.setFilter('Erőforrások')">Erőforrások</div>
+    <div class="text1 center nprpl flex1" (click)="mainS.setFilter('Tulajdonságok')">Tulajdonságok</div>
+    <div class="text1 center nprpl flex1" (click)="mainS.setFilter('Állapotjelző')">Állapotjelző</div>
+    <div class="text1 center nprpl flex1" (click)="mainS.setFilter('Szakértelmek')">Szakértelmek</div>
+    <div class="text1 center nprpl flex1" (click)="mainS.setFilter('Eszközök')">Eszközök</div>
+
+
+    <!-- karakter kezelők -->
+    <div *ngIf="userIsAuthenticated && mainS.mainCharForm.get('creatorId')?.value == getCreatorId()" class="buttonCont btnBack">
+      <div class="itemGet text1 w100 center" (click)="mainS.sendChar()">+ Karakter mentése +</div>
+    </div>
+    <div *ngIf="resS.getSzabadKarma() >= 2" class="buttonCont btnBack">
+      <div class="itemGet text1 w100 center" (click)="skillsS.newSkill()">Új Szakértelem</div>
+    </div>
+    <div class="buttonCont btnBack">
+      <div class="itemGet text1 w100 center" (click)="itemsS.newItem()">Új Felszerelés</div>
+    </div>
+
+    <!-- kinyitott oldalak becsukása -->
+    <div class="buttonCont btnBack">
+      <div class="itemEdit text1 w100 center" (click)="hide.clearStatus()">Összes becsukása</div>
+    </div>
+
+    <!-- oldalváltás a Karakterlistához -->
+    <div class="buttonCont btnBack margTop1">
+      <div class="itemRemove text1 w100 center" (click)="backToList(); closeMenu()">Vissza a Karakterlistához</div>
+    </div>
+  </div>
+</div>

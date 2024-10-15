@@ -1,0 +1,24 @@
+button {
+  justify-content: center;
+  align-items: center;
+}
+
+button:disabled {
+  background-color: lightgray;
+  color: gray;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+.buttonCont {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  justify-content: space-evenly;
+  overflow: visible;
+}
+
+.btnBack {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+}

@@ -1,0 +1,58 @@
+
+<div class="flexCont w100" [formGroup]="s.resourcesForm" *ngIf="s.resourcesForm">
+
+  <!-- karma értékek -->
+
+  <div class="flexCont w100">
+    <h3 class="margTop1">Karma</h3>
+
+    <div *ngFor="let res of karmaUtil" class="w100 flexCont">
+      <div class="w50 text1 nprpl">{{res.nev}}</div>
+      <app-special-field class="w50 flexCont"
+      [ertek]="s.getFc(res.fcName)?.value"
+      [tipus]="'karma'"
+      ></app-special-field>
+    </div>
+
+    <div class="w50 text1 nprpl">Szabad Karma</div>
+    <app-special-field class="w50"
+    [ertek]="szabadKarma"
+    [tipus]="'karma'"
+    ></app-special-field>
+
+  </div>
+
+  <div class="buttonCont w100 btnBack margBott1">
+    <button class="text1 nprpl center" type="button" (click)="exchangeKarma()"
+    >1 &#x262F; => 7500 N&#xa5;</button>
+  </div>
+
+  <!-- tőke értékek -->
+
+  <div class="flexCont w100">
+
+    <h3>Tőke</h3>
+
+    <div *ngFor="let res of tokeUtil" class="w100 flexCont">
+      <div class="w50 text1 nrng">{{res.nev}}</div>
+      <app-special-field class="w50 flexCont"
+      [ertek]="s.getFc(res.fcName)?.value"
+      [tipus]="'toke'"
+      ></app-special-field>
+    </div>
+
+    <div class="w50 text1 nrng">Szabad Tőke</div>
+    <app-special-field class="w50"
+    [ertek]="szabadToke"
+    [tipus]="'toke'"
+    ></app-special-field>
+
+    <div class="buttonCont w100 btnBack">
+      <button class="text1 nrng" type="button" (click)="exchangeToke()"
+      >7500 N&#xa5; => 1 &#x262F;</button>
+    </div>
+  </div>
+
+
+
+</div>
