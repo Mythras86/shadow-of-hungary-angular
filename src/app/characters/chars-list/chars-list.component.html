@@ -1,5 +1,5 @@
   <div class="buttonCont w100 center btnBack">
-    <button class="itemGet text1" (click)="s.newChar()">Új Karakter</button>
+    <button class="itemGet pad03" (click)="s.newChar()">Új Karakter</button>
   </div>
 
   <div class="w100 flexCont" *ngFor="let csoport of ['Saját karakterek', 'Más karakterek']">
@@ -10,16 +10,16 @@
 
       <div class="flexCont margBott1" *ngIf="csoport == getCsoport(char.creatorId!)">
 
-        <div class="w80 posRel" [ngClass]="select.toggleClass(char._id!)" (click)="select.toggleStatus(char._id!)">
-          <div class="ngrn w100 text2 center">{{char.teljesnev}}</div>
-          <div class="nbl w100 text1">Nyelv: {{char.anyanyelv}}</div>
-          <div class="nbl w100 text1">DNS: {{char.dns}}</div>
+        <div class="w80 posRel">
+          <div class="ngrn w100 pad03 center">{{char.teljesnev}}</div>
+          <div class="nbl w100 pad03">Nyelv: {{char.anyanyelv}}</div>
+          <div class="nbl w100 pad03">DNS: {{char.dns}}</div>
 
-          <div *ngIf="select.status == char._id" class="buttonCont w100 posAbs btnBack">
-            <button *ngIf="userId === char.creatorId" class="itemEdit text1 w40" type="button" (click)="s.updateChar(char._id)">Szerkesztés</button>
-            <button  class="itemRemove text1 w40" (click)="deleteChar(char._id)">Törlés</button>
-            <button *ngIf="userId !== char.creatorId" class="itemGet text1" type="button" [disabled]="userId == char.creatorId && !userIsAuthenticated" (click)="s.updateChar(char._id)">Megtekintés</button>
-          </div>
+          <!-- <div class="buttonCont w100 posAbs btnBack">
+            <button *ngIf="userId === char.creatorId" class="itemEdit pad03 w40" type="button" (click)="s.updateChar(char._id)">Szerkesztés</button>
+            <button  class="itemRemove pad03 w40" (click)="deleteChar(char._id)">Törlés</button>
+            <button *ngIf="userId !== char.creatorId" class="itemGet pad03" type="button" [disabled]="userId == char.creatorId && !userIsAuthenticated" (click)="s.updateChar(char._id)">Megtekintés</button>
+          </div> -->
 
       </div>
 

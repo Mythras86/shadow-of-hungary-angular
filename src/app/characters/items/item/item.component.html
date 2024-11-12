@@ -6,7 +6,7 @@
   <div headText class="flexContNoWrap">
 
     <div class="flex1">
-      <div class="nwht text1 {{hide.checkStatus(item._id+i) ? '' : 'overflow'}}">
+      <div class="nwht pad03 {{hide.checkStatus(item._id+i) ? '' : 'overflow'}}">
         {{item.nev}}
       </div>
     </div>
@@ -16,42 +16,42 @@
   <!-- tartalom -->
   <div itemCont class="flexCont w100">
 
-    <div *ngIf="item.csoport" class="w40 nbl text1">Csoport</div>
-    <div *ngIf="item.csoport" class="w60 grayCell text1">{{item.csoport}}</div>
+    <div *ngIf="item.csoport" class="w40 nbl pad03">Csoport</div>
+    <div *ngIf="item.csoport" class="w60 grayCell pad03">{{item.csoport}}</div>
 
-    <div *ngIf="item.tipus" class="w40 nbl text1">Típus</div>
-    <div *ngIf="item.tipus" class="w60 grayCell text1">{{item.tipus}}</div>
+    <div *ngIf="item.tipus" class="w40 nbl pad03">Típus</div>
+    <div *ngIf="item.tipus" class="w60 grayCell pad03">{{item.tipus}}</div>
 
-    <div *ngIf="item.suly" class="w40 nbl text1">Súly</div>
+    <div *ngIf="item.suly" class="w40 nbl pad03">Súly</div>
     <app-special-field *ngIf="item.suly" class="w60"
     [ertek]="item.suly"
     [tipus]="'suly'"
     ></app-special-field>
 
-    <div *ngIf="item.celszam" class="w40 nbl text1">Célszám</div>
-    <div *ngIf="item.celszam" class="w60 grayCell textR  text1">{{item.celszam}}</div>
+    <div *ngIf="item.celszam" class="w40 nbl pad03">Célszám</div>
+    <div *ngIf="item.celszam" class="w60 grayCell textR  pad03">{{item.celszam}}</div>
 
-    <div *ngIf="item.celpontokSzama" class="w40 nbl text1">Célpontok</div>
-    <div *ngIf="item.celpontokSzama" class="w60 grayCell textR  text1">{{item.celpontokSzama}}</div>
+    <div *ngIf="item.celpontokSzama" class="w40 nbl pad03">Célpontok</div>
+    <div *ngIf="item.celpontokSzama" class="w60 grayCell textR  pad03">{{item.celpontokSzama}}</div>
 
-    <div *ngIf="item.hatosugar" class="w40 nbl text1">Hatósugár</div>
-    <div *ngIf="item.hatosugar" class="w60 grayCell textR  text1">{{item.hatosugar}}</div>
+    <div *ngIf="item.hatosugar" class="w40 nbl pad03">Hatósugár</div>
+    <div *ngIf="item.hatosugar" class="w60 grayCell textR  pad03">{{item.hatosugar}}</div>
 
 
-    <div *ngIf="item.felhasznalasNev" class="w40 nbl text1">{{item.felhasznalasNev}}</div>
+    <div *ngIf="item.felhasznalasNev" class="w40 nbl pad03">{{item.felhasznalasNev}}</div>
     <app-special-field *ngIf="item.felhasznalasNev" class="w60"
     [ertek]="'Max: '+ item.felhasznalasMax! +' / H: '+ item.felhasznalt!"
     [tipus]="'suly'"
     [egyeniEgyseg]="' szfh'"
     ></app-special-field>
 
-    <div *ngIf="item.tavolsag" class="w40 nbl text1">Távolság</div>
-    <div *ngIf="item.tavolsag" class="w60 grayCell textR  text1">{{item.tavolsag}}</div>
+    <div *ngIf="item.tavolsag" class="w40 nbl pad03">Távolság</div>
+    <div *ngIf="item.tavolsag" class="w60 grayCell textR  pad03">{{item.tavolsag}}</div>
 
     <div *ngIf="item.tulajdonsagModosito?.length! > 0" class="w100">
-      <div class="nbl w100 text1 center">Tulajdonság Módosítók</div>
+      <div class="nbl w100 pad03 center">Tulajdonság Módosítók</div>
       <div *ngFor="let tm of item.tulajdonsagModosito" class="flexCont w100">
-        <div class="w60 nbl text1">{{getTulNev(tm.nev)}}</div>
+        <div class="w60 nbl pad03">{{getTulNev(tm.nev)}}</div>
         <app-special-field class="w40"
         [tipus]="'szint'"
         [ertek]="tm.ertek"
@@ -60,43 +60,43 @@
     </div>
 
 
-    <div *ngIf="item.tokeKtsgPerSzint" class="w60 nbl text1 center">Tőke / Szint</div>
+    <div *ngIf="item.tokeKtsgPerSzint" class="w60 nbl pad03 center">Tőke / Szint</div>
     <app-special-field class="w40" *ngIf="item.tokeKtsgPerSzint"
     [ertek] = "item.tokeKtsgPerSzint"
     [tipus]="'toke'"
     ></app-special-field>
 
-    <div *ngIf="item.karmaKtsgPerSzint" class="w60 nbl text1 center">Karma / Szint</div>
+    <div *ngIf="item.karmaKtsgPerSzint" class="w60 nbl pad03 center">Karma / Szint</div>
     <app-special-field class="w40" *ngIf="item.karmaKtsgPerSzint"
     [ertek] = "item.karmaKtsgPerSzint"
     [tipus]="'karma'"
     ></app-special-field>
 
-    <div *ngIf="item.esszenciaKtsgPerSzint" class="w60 nbl text1 center">Esszencia / Szint</div>
+    <div *ngIf="item.esszenciaKtsgPerSzint" class="w60 nbl pad03 center">Esszencia / Szint</div>
     <app-special-field class="w40" *ngIf="item.esszenciaKtsgPerSzint"
     [ertek] = "item.esszenciaKtsgPerSzint"
     [tipus]="'esszencia'"
     ></app-special-field>
 
-    <div *ngIf="item.tokeKtsgSzorzo" class="w60 nbl text1 center">Tőke Szorzó</div>
+    <div *ngIf="item.tokeKtsgSzorzo" class="w60 nbl pad03 center">Tőke Szorzó</div>
     <app-special-field class="w40" *ngIf="item.tokeKtsgSzorzo"
     [ertek] = "item.tokeKtsgSzorzo"
     [tipus]="'toke'"
     ></app-special-field>
 
-    <div *ngIf="item.karmaKtsgSzorzo" class="w60 nbl text1 center">Karma Szorzó</div>
+    <div *ngIf="item.karmaKtsgSzorzo" class="w60 nbl pad03 center">Karma Szorzó</div>
     <app-special-field class="w40" *ngIf="item.karmaKtsgSzorzo"
     [ertek] = "item.karmaKtsgSzorzo"
     [tipus]="'karma'"
     ></app-special-field>
 
-    <div *ngIf="item.esszenciaKtsgSzorzo" class="w60 nbl text1 center">Esszencia Szorzó</div>
+    <div *ngIf="item.esszenciaKtsgSzorzo" class="w60 nbl pad03 center">Esszencia Szorzó</div>
     <app-special-field class="w40" *ngIf="item.esszenciaKtsgSzorzo"
     [ertek] = "item.esszenciaKtsgSzorzo"
     [tipus]="'esszencia'"
     ></app-special-field>
 
-    <div *ngIf="item.tamadas" class="w50 nbl text1">{{item.tamadas}}</div>
+    <div *ngIf="item.tamadas" class="w50 nbl pad03">{{item.tamadas}}</div>
     <app-special-field *ngIf="item.akcio" class="w20"
     [ertek]="item.akcio"
     [tipus]="'akcio'"
@@ -110,8 +110,8 @@
     [item]="item"
     ></app-spirit>
 
-    <div *ngIf="item.leiras" class="w100 nbl text1 center">Leírás</div>
-    <div *ngIf="item.leiras" class="w100 grayCell text1">{{item.leiras}}</div>
+    <div *ngIf="item.leiras" class="w100 nbl pad03 center">Leírás</div>
+    <div *ngIf="item.leiras" class="w100 grayCell pad03">{{item.leiras}}</div>
 
     <ng-content></ng-content>
   </div>

@@ -63,12 +63,12 @@ export class ResourcesService {
     form?.patchValue(form.value+ertek);
   }
 
-  getSzabadKarma(): number {
-    return this.getFc('alapKarma')?.value + this.getFc('szerzettKarma')?.value + this.getFc('elkoltottKarma')?.value;
-  }
-
-  getSzabadToke(): number {
-    return this.getFc('alapToke')?.value + this.getFc('szerzettToke')?.value + this.getFc('elkoltottToke')?.value;
+  getSzabadEroforras(tipus: string): number {
+    if (tipus == 'karma') {
+      return this.getFc('alapKarma')?.value + this.getFc('szerzettKarma')?.value + this.getFc('elkoltottKarma')?.value;
+    } else {
+      return this.getFc('alapToke')?.value + this.getFc('szerzettToke')?.value + this.getFc('elkoltottToke')?.value;
+    }
   }
 
 }

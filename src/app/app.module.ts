@@ -34,11 +34,12 @@ import { DetailComponent } from './characters/details/detail/detail.component';
 import { SelectSkillComponent } from './characters/skills/select-skill/select-skill.component';
 import { SelectSkillSpecComponent } from './characters/skills/select-skill-spec/select-skill-spec.component';
 import { SkillspecComponent } from './characters/skills/skillspec/skillspec.component';
-import { SelectItemComponent } from './characters/items/select-item/select-item.component';
+import { ItemShopComponent } from './characters/items/item-shop/item-shop.component';
 import { ItemComponent } from './characters/items/item/item.component';
 import { SpecialFieldComponent } from './elements/special-field/special-field.component';
 import { FloatingMenuComponent } from './elements/floating-menu/floating-menu.component';
 import { SpiritComponent } from './characters/items/spirit/spirit.component';
+import { SelectItemComponent } from './elements/select-item/select-item.component';
 
 @NgModule({
   declarations: [
@@ -70,11 +71,12 @@ import { SpiritComponent } from './characters/items/spirit/spirit.component';
     SelectSkillComponent,
     SelectSkillSpecComponent,
     SkillspecComponent,
-    SelectItemComponent,
+    ItemShopComponent,
     ItemComponent,
     SpecialFieldComponent,
     FloatingMenuComponent,
     SpiritComponent,
+    SelectItemComponent
   ],
   bootstrap: [AppComponent],
   imports: [

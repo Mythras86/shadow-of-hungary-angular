@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DetailsService } from './details.service';
-import { ItemSelectService } from 'src/app/elements/item-select/item-select.service';
 import { detailsInterface, detailsUtil, dnsUtil, nemekUtil, nyelvekUtil } from './details-utility';
 import { ModalService } from 'src/app/elements/modals/modal.service';
 import { DetailComponent } from './detail/detail.component';
@@ -14,7 +13,6 @@ export class DetailsComponent implements OnInit {
 
   constructor(
     public s: DetailsService,
-    public select: ItemSelectService,
     private modalS: ModalService,
   ) {
     this.details = detailsUtil;

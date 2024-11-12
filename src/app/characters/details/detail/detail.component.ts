@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { Subject } from 'rxjs';
-import { ItemSelectService } from 'src/app/elements/item-select/item-select.service';
 
 @Component({
   selector: 'app-detail',
@@ -10,7 +9,6 @@ import { ItemSelectService } from 'src/app/elements/item-select/item-select.serv
 export class DetailComponent {
 
   constructor(
-    public select: ItemSelectService
   ) {}
 
   @Input() editMode: boolean = false;

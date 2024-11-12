@@ -3,10 +3,8 @@ import { AttributesService } from './attributes.service';
 import { AttrInterface, attributesUtil } from './attributes-utility';
 import { ResourcesService } from '../resources/resources.service';
 import { DetailsService } from '../details/details.service';
-import { ItemSelectService } from 'src/app/elements/item-select/item-select.service';
 import { ModalService } from 'src/app/elements/modals/modal.service';
 import { LevelcontrolComponent } from 'src/app/elements/levelcontrol/levelcontrol.component';
-import { AttributesModel } from './attributes.model';
 
 @Component({
   selector: 'app-attributes',
@@ -19,7 +17,6 @@ export class AttributesComponent implements OnInit {
     public s: AttributesService,
     public resS: ResourcesService,
     public detailsS: DetailsService,
-    public select: ItemSelectService,
     public modalS: ModalService,
   ) {
     this.csoportok = this.getCsoport();

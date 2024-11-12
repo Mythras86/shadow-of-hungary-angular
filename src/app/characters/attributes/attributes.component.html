@@ -5,8 +5,7 @@
   <div class="w100" *ngFor="let elem of csoportok">
     <h3 class="margTop1">{{elem}}</h3>
 
-    <div class="flexCont w100 posRel" *ngFor="let a of attributes"
-    [ngClass]="select.toggleClass(a.fcName)" (click)="select.toggleStatus(a.fcName)">
+    <div class="flexCont w100 posRel" *ngFor="let a of attributes">
     <app-attribute *ngIf="elem == a.csoport"
       [nev]="a.nev"
       [szint]="s.getFc(a.fcName).value"
@@ -16,7 +15,7 @@
       [teljesErtek]="s.getTulErtek(a.fcName)"
     ></app-attribute>
 
-      <div *ngIf="select.status == a.fcName && elem == a.csoport && s.getFc(a.fcName)?.value < 6 && a.lepes > 0" class="buttonCont posAbs btnBack">
+      <div *ngIf="elem == a.csoport && s.getFc(a.fcName)?.value < 6 && a.lepes > 0" class="buttonCont posAbs btnBack">
         <app-btn-options
         (buttonAction)="attrLvlUp(a.fcName)"
         ></app-btn-options>

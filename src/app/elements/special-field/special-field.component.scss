@@ -1,6 +1,8 @@
+@import "../../../styles.scss";
+
 :host {
   width: 100%;
-  display: flex;
+  @extend .textR;
 }
 
 span {

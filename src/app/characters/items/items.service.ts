@@ -3,7 +3,7 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ItemsModel, nevErtekModel } from './items.model';
 import { ResourcesService } from '../resources/resources.service';
 import { ModalService } from 'src/app/elements/modals/modal.service';
-import { SelectItemComponent } from './select-item/select-item.component';
+import { ItemShopComponent } from './item-shop/item-shop.component';
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +29,7 @@ export class ItemsService {
 
   newItem(){
     //const ownedItemsId: Array<string> = Object.values(this.items.controls).map((x:any) => x.value).map(x => x.id);
-    this.modalS.openModal(SelectItemComponent, '').subscribe(
+    this.modalS.openModal(ItemShopComponent, '').subscribe(
       w => this.addItem(w)
     );
   }

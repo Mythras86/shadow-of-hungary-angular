@@ -1,15 +1,17 @@
 <form id="userLogin" class="bgreen margTop1 flexCont" [formGroup]="userLoginForm" (ngSubmit)="onLogin()">
 
-  <p class="fwhite">"Tudod a szabályokat: lőj pontosan, spórolj a skulóval és soha, de SOHA ne üzletelj egy Sárkánnyal!"</p>
+  <h2 class="fgreen margTop1">Belépés</h2>
 
-  <div class="w80">
+  <div class="w80 margTop1">
     <label class="fwhite" for="loginEmail">Email Cím</label>
     <input id="loginEmail" type="email" formControlName="email" placeholder="E-amil cím">
     <label class="fwhite" for="loginPass">Jelszó</label>
     <input id="loginPass" type="password" formControlName="pass" placeholder="Jelszó">
   </div>
 
-  <button class="w50 itemGet margTop1 margBott1" type="submit" [disabled]="!userLoginForm.valid">Belépés</button>
+  <button class="w80 itemGet margTop1 margBott1 pad03" type="submit" [disabled]="!userLoginForm.valid">
+    "Tudod a szabályokat: lőj pontosan, spórolj a skulóval és soha, de SOHA ne üzletelj egy Sárkánnyal!"
+  </button>
 
 </form>
 
@@ -19,7 +21,7 @@
 
   <div class="w80">
     <label class="fwhite" for="regNev">Felhasználónév</label>
-    <input id="regNev" type="text1" formControlName="name" placeholder="Név">
+    <input id="regNev" type="pad03" formControlName="name" placeholder="Név">
     <label class="fwhite" for="regEmail">Email Cím</label>
     <input id="regEmail" type="email" formControlName="email" placeholder="E-amil cím">
     <label class="fwhite" for="regPass">Jelszó</label>

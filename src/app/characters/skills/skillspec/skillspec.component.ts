@@ -5,7 +5,6 @@ import { SkillSpecInterface, skillsSpecUtil } from '../skills.util';
 import { ModalService } from 'src/app/elements/modals/modal.service';
 import { SkillsService } from '../skills.service';
 import { ResourcesService } from '../../resources/resources.service';
-import { ItemSelectService } from 'src/app/elements/item-select/item-select.service';
 
 @Component({
   selector: 'app-skillspec',
@@ -18,7 +17,6 @@ export class SkillspecComponent implements OnInit {
     private resS: ResourcesService,
     private modalS: ModalService,
     public s: SkillsService,
-    public select: ItemSelectService,
   ) {}
 
   @Input() spec!: SkillSpecModel;

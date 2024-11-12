@@ -11,12 +11,12 @@
   <!-- Pihentség állapot -->
   <!-- <div class="flexCont w100 margBott1">
 
-    <div [ngClass]="toggleKockaMColor('pinhentsegAllapot', 4)" (click)="sendStatus('pinhentsegAllapot', 4)" class="w25 text1">Pihent</div>
-    <div class="w75 nwht text1">Pihentség</div>
-    <div [ngClass]="toggleKockaMColor('pinhentsegAllapot', 3)" (click)="sendStatus('pinhentsegAllapot', 3)" class="flex1 text1">Rendben</div>
-    <div [ngClass]="toggleKockaMColor('pinhentsegAllapot', 2)" (click)="sendStatus('pinhentsegAllapot', 2)" class="flex1 text1">Fáradt</div>
-    <div [ngClass]="toggleKockaMColor('pinhentsegAllapot', 1)" (click)="sendStatus('pinhentsegAllapot', 1)" class="flex1 text1">Kimerült</div>
-    <div [ngClass]="toggleKockaMColor('pinhentsegAllapot', 0)" (click)="sendStatus('pinhentsegAllapot', 0)" class="flex1 text1">Elgyötört</div>
+    <div [ngClass]="toggleKockaMColor('pinhentsegAllapot', 4)" (click)="sendStatus('pinhentsegAllapot', 4)" class="w25 pad03">Pihent</div>
+    <div class="w75 nwht pad03">Pihentség</div>
+    <div [ngClass]="toggleKockaMColor('pinhentsegAllapot', 3)" (click)="sendStatus('pinhentsegAllapot', 3)" class="flex1 pad03">Rendben</div>
+    <div [ngClass]="toggleKockaMColor('pinhentsegAllapot', 2)" (click)="sendStatus('pinhentsegAllapot', 2)" class="flex1 pad03">Fáradt</div>
+    <div [ngClass]="toggleKockaMColor('pinhentsegAllapot', 1)" (click)="sendStatus('pinhentsegAllapot', 1)" class="flex1 pad03">Kimerült</div>
+    <div [ngClass]="toggleKockaMColor('pinhentsegAllapot', 0)" (click)="sendStatus('pinhentsegAllapot', 0)" class="flex1 pad03">Elgyötört</div>
 
   </div> -->
 
@@ -32,36 +32,36 @@
   <!-- Tápláltság állapot -->
   <!-- <div class="flexCont w100 margBott1">
 
-    <div [ngClass]="toggleKockaMColor('taplaltsagAllapot', 4)" (click)="sendStatus('taplaltsagAllapot', 4)" class="w25 text1">Táplált</div>
-    <div class="w75 nwht text1">Tápláltság</div>
-    <div [ngClass]="toggleKockaMColor('taplaltsagAllapot', 3)" (click)="sendStatus('taplaltsagAllapot', 3)" class="flex1 text1">Rendben</div>
-    <div [ngClass]="toggleKockaMColor('taplaltsagAllapot', 2)" (click)="sendStatus('taplaltsagAllapot', 2)" class="flex1 text1">Éhes</div>
-    <div [ngClass]="toggleKockaMColor('taplaltsagAllapot', 1)" (click)="sendStatus('taplaltsagAllapot', 1)" class="flex1 text1">Nélkülöz</div>
-    <div [ngClass]="toggleKockaMColor('taplaltsagAllapot', 0)" (click)="sendStatus('taplaltsagAllapot', 0)" class="flex1 text1">Éhező</div>
+    <div [ngClass]="toggleKockaMColor('taplaltsagAllapot', 4)" (click)="sendStatus('taplaltsagAllapot', 4)" class="w25 pad03">Táplált</div>
+    <div class="w75 nwht pad03">Tápláltság</div>
+    <div [ngClass]="toggleKockaMColor('taplaltsagAllapot', 3)" (click)="sendStatus('taplaltsagAllapot', 3)" class="flex1 pad03">Rendben</div>
+    <div [ngClass]="toggleKockaMColor('taplaltsagAllapot', 2)" (click)="sendStatus('taplaltsagAllapot', 2)" class="flex1 pad03">Éhes</div>
+    <div [ngClass]="toggleKockaMColor('taplaltsagAllapot', 1)" (click)="sendStatus('taplaltsagAllapot', 1)" class="flex1 pad03">Nélkülöz</div>
+    <div [ngClass]="toggleKockaMColor('taplaltsagAllapot', 0)" (click)="sendStatus('taplaltsagAllapot', 0)" class="flex1 pad03">Éhező</div>
 
   </div>
   -->
 
   <div class="w50 flexCont margTop1">
-   <div class="w100 text1 center nwht">
+   <div class="w100 pad03 center nwht">
      Kezdeményezés
     </div>
-    <div class="w100 text1 center" [ngClass]="colorMe(reakcio - modifiers)">
+    <div class="w100 pad03 center" [ngClass]="colorMe(reakcio - modifiers)">
       {{reakcio - modifiers}} + {{kezdemenyezes}}d6
     </div>
   </div>
 
   <div class="w50 flexCont margTop1">
-    <div class="w100 text1 center nwht ">
+    <div class="w100 pad03 center nwht ">
       Célszám
     </div>
-    <div class="w100 text1 center" [ngClass]="colorMe(0-modifiers)">
+    <div class="w100 pad03 center" [ngClass]="colorMe(0-modifiers)">
       +{{modifiers}}
     </div>
   </div>
 
   <div class="w50 flexCont margTop1">
-    <div class="w100 text1 center nwht ">
+    <div class="w100 pad03 center nwht ">
       Páncélérték
     </div>
     <app-special-field class="w100"
@@ -71,7 +71,7 @@
   </div>
 
   <div class="w50 flexCont margTop1">
-    <div class="w100 text1 center nwht ">
+    <div class="w100 pad03 center nwht ">
       Akciópont
     </div>
     <app-special-field class="w100"

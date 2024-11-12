@@ -3,7 +3,6 @@ import { FormArray, FormGroup } from '@angular/forms';
 import { DetailsService } from '../details/details.service';
 import { ResourcesService } from '../resources/resources.service';
 import { SkillsService } from './skills.service';
-import { ItemSelectService } from 'src/app/elements/item-select/item-select.service';
 import { AttributesService } from '../attributes/attributes.service';
 import { SkillSpecFG } from './skills.model';
 import { first } from 'rxjs';
@@ -17,7 +16,6 @@ export class SkillsComponent {
 
   constructor(
     public s: SkillsService,
-    public select: ItemSelectService,
     public resS: ResourcesService,
     private detailsS: DetailsService,
     public attrS: AttributesService,

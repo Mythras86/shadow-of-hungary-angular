@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalService } from '../modals/modal.service';
 import { Subject, Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { CharsMainService } from 'src/app/characters/chars-main.service';
 import { AuthService } from 'src/app/authentication/auth.service';
 import { SpinnerService } from '../spinner/spinner.service';
 import { ResourcesService } from 'src/app/characters/resources/resources.service';
-import { ItemSelectService } from '../item-select/item-select.service';
 import { SkillsService } from 'src/app/characters/skills/skills.service';
 import { ItemsService } from 'src/app/characters/items/items.service';
 import { HideService } from '../hide-content/hide-content.service';

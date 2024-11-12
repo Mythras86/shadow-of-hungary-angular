@@ -1,63 +1,77 @@
-<div class="flexCont">
+<app-hide-content class="flex1"
+[keyWord]="'mainSite'"
+[arrowColor]="'ngrn'"
+[arrowBefore]="false"
+>
+  <div headText class="ngrn pad03">special-field test de amúgy ez túl hosszú szöveg, hogy kiférjen</div>
 
-  <app-hide-content
-  [keyWord]="'mainSite'"
-  [arrowColor]="'ngrn'"
-  [arrowBefore]="false"
-  >
-    <div headText class="ngrn w100 text1">special-field test de amúgy ez túl hosszú szöveg, hogy kiférjen</div>
+  <div itemCont>
 
-    <div itemCont class="w100">
+    <app-special-field
+    [ertek]="123456789"
+    [tipus]="'karma'"
+    ></app-special-field>
 
-      <app-special-field class="w50"
-      [ertek]="123456789"
-      [tipus]="'karma'"
-      ></app-special-field>
+    <app-special-field
+    [ertek]="123456789"
+    [tipus]="'toke'"
+    ></app-special-field>
 
-      <app-special-field class="w50"
-      [ertek]="123456789"
-      [tipus]="'toke'"
-      ></app-special-field>
+    <app-special-field
+    [ertek]="123456789"
+    [tipus]="'esszencia'"
+    ></app-special-field>
 
-      <app-special-field class="w50"
-      [ertek]="123456789"
-      [tipus]="'esszencia'"
-      ></app-special-field>
+    <app-special-field
+    [ertek]="123456789"
+    [tipus]="'szint'"
+    ></app-special-field>
 
-      <app-special-field class="w50"
-      [ertek]="123456789"
-      [tipus]="'szint'"
-      ></app-special-field>
+    <app-special-field
+    [ertek]="123456789"
+    [tipus]="'pancel'"
+    ></app-special-field>
 
-      <app-special-field class="w50"
-      [ertek]="123456789"
-      [tipus]="'pancel'"
-      ></app-special-field>
+    <app-special-field
+    [ertek]="123456789"
+    [tipus]="'sebzes'"
+    ></app-special-field>
 
-      <app-special-field class="w50"
-      [ertek]="123456789"
-      [tipus]="'sebzes'"
-      ></app-special-field>
+    <app-special-field
+    [ertek]="123456789"
+    [tipus]="'suly'"
+    ></app-special-field>
 
-      <app-special-field class="w50"
-      [ertek]="123456789"
-      [tipus]="'suly'"
-      ></app-special-field>
-
-      <app-special-field class="w50"
-      [ertek]="123456789"
-      [tipus]="'akcio'"
-      ></app-special-field>
-    </div>
-  </app-hide-content>
+    <app-special-field
+    [ertek]="123456789"
+    [tipus]="'akcio'"
+    ></app-special-field>
+  </div>
+</app-hide-content>
 
 
-  <p class="margBott1 nrd text1 w100 margTop1">FIGYELEM! Használat előtt olvasd el!</p>
-  <p class="margBott1 nrng text1 w100">Az oldal jelenleg csak mobilos nézetre van optimalizálva. Csak mobilon, vagy vizsgálat alatt érdemes megtekinteni!</p>
-  <p class="margBott1 nyllw text1 w100">A karakterkészítő használatához regisztrálni kell és utána be kell lépni.</p>
-  <p class="margBott1 nprpl text1 w100">Regisztrációnál csak kitalált email címet használj, de a formátum legyen helyes!</p>
-  <p class="margBott1 ngrn text1 w100">A felhasználói profil szerkesztése még nem elérhető.</p>
-  <p class="margBott1 ntl text1 w100">Karaktereket bármely felhasználó készíthet, módosíthat, vagy törölhet, de az egyéb adatbázisokhoz nincs hozzáférés.</p>
-  <p class="margBott1 nbl text1 w100">Végül, ez egy hobbiprojekt, tele hibákkal, de tele lehetsőségekkel. Bárki bűvészkedhet vele, de használati útmutatót sajnos nem tudok mellékelni :p Jó szórakozást! :D</p>
+<app-select-item [selectedId]="'maincont'">
+  <div showSimple class="nrd pad03">FIGYELEM! Használat előtt olvasd el!</div>
+  <div showExtended class="margTop1">
+    <div class="nrd pad03">FIGYELEM! Használat előtt olvasd el!</div>
+    <div class="nrng pad03">Az oldal jelenleg csak mobilos nézetre van optimalizálva. Csak mobilon, vagy vizsgálat alatt érdemes megtekinteni!</div>
+    <div class="nyllw pad03">A karakterkészítő használatához regisztrálni kell és utána be kell lépni.</div>
+    <div class="nprpl pad03">Regisztrációnál csak kitalált email címet használj, de a formátum legyen helyes!</div>
+    <div class="ngrn pad03">A felhasználói profil szerkesztése még nem elérhető.</div>
+    <div class="ntl pad03">Karaktereket bármely felhasználó készíthet, módosíthat, vagy törölhet, de az egyéb adatbázisokhoz nincs hozzáférés.</div>
+    <div class="nbl pad03">Végül, ez egy hobbiprojekt, tele hibákkal, de tele lehetsőségekkel. Bárki bűvészkedhet vele, de használati útmutatót sajnos nem tudok mellékelni :p Jó szórakozást! :D</div>
+  </div>
+</app-select-item>
 
-</div>
+<app-select-item [selectedId]="'maincont2'">
+  <div showSimple class="nrd pad03">FIGYELEM! Használat előtt olvasd el mégegyszer!</div>
+  <div showExtended class="margTop1">
+    <div class="nrd pad03">FIGYELEM! Használat előtt olvasd el mégegyszer!</div>
+    <div class="nrng pad03">Az oldal jelenleg csak mobilos nézetre van optimalizálva. Csak mobilon, vagy vizsgálat alatt érdemes megtekinteni!</div>
+    <div class="nyllw pad03">A karakterkészítő használatához regisztrálni kell és utána be kell lépni.</div>
+    <div class="nprpl pad03">Regisztrációnál csak kitalált email címet használj, de a formátum legyen helyes!</div>
+    <div class="ngrn pad03">A felhasználói profil szerkesztése még nem elérhető.</div>
+    <div class="ntl pad03">Karaktereket bármely felhasználó készíthet, módosíthat, vagy törölhet, de az egyéb adatbázisokhoz nincs hozzáférés.</div>
+    <div class="nbl pad03">Végül, ez egy hobbiprojekt, tele hibákkal, de tele lehetsőségekkel. Bárki bűvészkedhet vele, de használati útmutatót sajnos nem tudok mellékelni :p Jó szórakozást! :D</div>
+  </div>
+</app-select-item>

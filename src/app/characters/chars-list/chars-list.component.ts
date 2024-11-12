@@ -1,10 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { AuthService } from 'src/app/authentication/auth.service';
 import { SpinnerService } from 'src/app/elements/spinner/spinner.service';
 import { CharsListService } from './chars-list.service';
-import { ItemSelectService } from 'src/app/elements/item-select/item-select.service';
 import { CharModel } from '../chars-main.model';
 
 @Component({
@@ -18,7 +16,6 @@ export class CharsListComponent implements OnInit, OnDestroy {
     public s: CharsListService,
     private authS: AuthService,
     public spinS: SpinnerService,
-    public select: ItemSelectService
   ) {}
 
   userIsAuthenticated = false;

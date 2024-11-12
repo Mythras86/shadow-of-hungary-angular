@@ -4,21 +4,19 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ItemsModel } from '../items.model';
 import { SpinnerService } from 'src/app/elements/spinner/spinner.service';
-import { ItemSelectService } from 'src/app/elements/item-select/item-select.service';
 
 const BACKEND_URL = environment.apiUrl + "/items/";
 
 @Component({
-  selector: 'app-select-item',
-  templateUrl: './select-item.component.html',
-  styleUrls: ['./select-item.component.scss']
+  selector: 'app-item-shop',
+  templateUrl: './item-shop.component.html',
+  styleUrls: ['./item-shop.component.scss']
 })
-export class SelectItemComponent implements OnInit {
+export class ItemShopComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
     private spinS: SpinnerService,
-    public select: ItemSelectService,
   ) {
   }
 

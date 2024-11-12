@@ -64,8 +64,8 @@ export class LevelcontrolComponent {
 
   buttonDisInc(lepes: number): boolean {
     if (
-      this.karmaKtsg*this.ertekValtozas + this.karmaKtsg*lepes > this.resS.getSzabadKarma() ||
-      this.tokeKtsg*this.ertekValtozas + this.tokeKtsg*lepes > this.resS.getSzabadToke() ||
+      this.karmaKtsg*this.ertekValtozas + this.karmaKtsg*lepes > this.resS.getSzabadEroforras('karma') ||
+      this.tokeKtsg*this.ertekValtozas + this.tokeKtsg*lepes > this.resS.getSzabadEroforras('toke') ||
       this.esszKtsg*this.ertekValtozas + this.esszKtsg*lepes > this.attrS.getTulErtek('esszencia') ||
       this.celErtek + this.ertekValtozas*lepes >= this.maxErtek*this.valto ||
       this.maxErtek*this.valto - this.minErtek*this.valto < lepes*this.valto

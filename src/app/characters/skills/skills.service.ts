@@ -58,7 +58,7 @@ export class SkillsService {
     }
 
     const ownedSkillsId: Array<string> = Object.values(activeSkills!.controls).map((x:any) => x.value).map(x => x.id);
-    this.modalS.openModal(SelectSkillComponent, {ownedSkillsId: ownedSkillsId, karma: this.resS.getSzabadKarma()}).subscribe(
+    this.modalS.openModal(SelectSkillComponent, {ownedSkillsId: ownedSkillsId, karma: this.resS.getSzabadEroforras('karma')}).subscribe(
       w => this.addSkill(w[0], w[1])
     );
   }

@@ -1,22 +1,28 @@
 <form class="flexCont w100 margTop1" *ngIf="s.mainCharForm" [formGroup]="s.mainCharForm">
 
-  <h2 *ngIf="s.filter == '' || s.filter ==  'Jellemzők'" >Jellemzők</h2>
-  <app-details *ngIf="s.filter == '' || s.filter ==  'Jellemzők'"></app-details>
-
-  <h2 *ngIf="s.filter == '' || s.filter ==  'Erőforrások'" >Erőforrások</h2>
-  <app-resources *ngIf="s.filter == '' || s.filter ==  'Erőforrások'"></app-resources>
-
-  <h2 *ngIf="s.filter == '' || s.filter ==  'Tulajdonságok'" >Tulajdonságok</h2>
-  <app-attributes *ngIf="s.filter == '' || s.filter ==  'Tulajdonságok'"></app-attributes>
-
-  <h2 *ngIf="s.filter == '' || s.filter ==  'Állapotjelző'" >Állapotjelző</h2>
-  <app-status *ngIf="s.filter == '' || s.filter ==  'Állapotjelző'"></app-status>
-
-  <h2 *ngIf="s.filter == '' || s.filter ==  'Szakértelmek'" >Szakértelmek</h2>
-  <app-skills *ngIf="s.filter == '' || s.filter ==  'Szakértelmek'"></app-skills>
-
-  <h2 *ngIf="s.filter == '' || s.filter ==  'Eszközök'" >Eszközök</h2>
-  <app-items *ngIf="s.filter == '' || s.filter ==  'Eszközök'"></app-items>
+  @if (s.filter == '' || s.filter ==  'Jellemzők') {
+    <h1>Jellemzők</h1>
+    <app-details></app-details>
+  }
+  @if (s.filter == '' || s.filter ==  'Erőforrások') {
+    <h1>Erőforrások</h1>
+    <app-resources></app-resources>
+  }
+  @if (s.filter == '' || s.filter ==  'Tulajdonságok') {
+    <h1>Tulajdonságok</h1>
+    <app-attributes></app-attributes>
+  }
+  @if (s.filter == '' || s.filter ==  'Szakértelmek') {
+    <h1>Szakértelmek</h1>
+    <app-skills></app-skills>
+  }
+  @if (s.filter == '' || s.filter ==  'Állapotjelző') {
+    <h1>Állapotjelző</h1>
+    <app-status></app-status>
+  }
+  @if (s.filter == '' || s.filter ==  'Eszközök') {
+    <h1>Eszközök</h1>
+    <app-items></app-items>
+  }
 
 </form>
-<app-floating-menu></app-floating-menu>

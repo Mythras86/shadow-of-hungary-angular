@@ -1,15 +1,15 @@
-<div class="ntl text2 center w90" >
+<div class="ntl pad03 center w90" >
   Eszközök
 </div>
 
 <!-- visszagomb -->
-<button class="itemRemove text1 w10 center" type="button" (click)="onClose()">X</button>
+<button class="itemRemove pad03 w10 center" type="button" (click)="onClose()">X</button>
 
 <!-- lista -->
 <div class="flexCont">
-  <div class="text1 center nprpl w100" (click)="setFilter('')">X Nincs</div>
+  <div class="pad03 center nprpl w100" (click)="setFilter('')">X Nincs</div>
   <div class="flexCont flex2" *ngFor="let elem of csoportok">
-    <div class="text1 center nprpl w100" (click)="setFilter(elem)">{{elem}}</div>
+    <div class="pad03 center nprpl w100" (click)="setFilter(elem)">{{elem}}</div>
   </div>
 </div>
 
@@ -28,7 +28,7 @@
         [item]="item"
         >
         <div class="buttonCont btnBack">
-          <button type="button" class="itemGet text1" (click)="onSave(item)">Kiválaszt</button>
+          <button type="button" class="itemGet pad03" (click)="onSave(item)">Kiválaszt</button>
         </div>
       </app-item>
 

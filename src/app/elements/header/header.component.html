@@ -1,31 +1,32 @@
-<div class="flexCont w100" *ngIf="!menuOn" (click)="toggleMenu()">
-  <div class="nbl flex1 center text2" *ngIf="!userIsAuthenticated && !menuOn">Üdv az Árnyak között!</div>
-  <div class="nbl flex1 center text2" *ngIf="userIsAuthenticated && !menuOn">{{getAName()}}</div>
+<h1 class="fgreen center bgreen pad03">Üdv az Árnyak között te kis halvány bocifing</h1>
+
+<!-- <div class="flexCont w100" *ngIf="!menuOn" (click)="toggleMenu()">
+  <div class="nbl flex1 center pad03" *ngIf="!userIsAuthenticated && !menuOn">Üdv az Árnyak között!</div>
+  <div class="nbl flex1 center pad03" *ngIf="userIsAuthenticated && !menuOn">{{getAName()}}</div>
   <div class="menu nyllw center">&#x2630;</div>
-</div>
+</div> -->
 
-
-<nav *ngIf="menuOn" class="w100"  >
-  <ul class="w100 flexCont">
-    <li class="w100" (click)="toggleMenu()">
-      <a class="nprpl text1 center" routerLink="/">Főoldal</a>
+<nav class="flexCont">
+  <ul class="bpurple flexContNoWrap flexWidth" style="--w: 100%">
+    <li class="flex1" (click)="toggleMenu()">
+      <a class="fpurple pad03" routerLink="/">Főoldal</a>
     </li>
-    <li class="w100" (click)="toggleMenu()">
-      <a class="nprpl text1 center" routerLink="/charslist">Karakterek</a>
+    <li class="flex1" (click)="toggleMenu()">
+      <a class="fpurple pad03 center" routerLink="/charslist">Karakterek</a>
     </li>
-    <li class="w100" (click)="toggleMenu()">
-      <a class="nprpl text1 center" routerLink="/npcs">Nem Játékosok</a>
+    <li class="flex1" (click)="toggleMenu()">
+      <a class="fpurple pad03 center" routerLink="/npcs">Nem Játékosok</a>
     </li>
-    <li class="w100" (click)="toggleMenu()">
-      <a class="nprpl text1 center" routerLink="/initiative">Kezdeményezés</a>
+    <li class="flex1" (click)="toggleMenu()">
+      <a class="fpurple pad03 center" routerLink="/initiative">Kezdeményezés</a>
     </li>
-    <li *ngIf="!userIsAuthenticated" class="w100" (click)="toggleMenu()">
-      <a class="nprpl text1 center" routerLink="/auth">Belépés</a>
+    <li *ngIf="!userIsAuthenticated" class="flex1" (click)="toggleMenu()">
+      <a class="fpurple pad03 center" routerLink="/auth">Belépés</a>
     </li>
-    <li *ngIf="userIsAuthenticated" class="w100" (click)="toggleMenu()">
-      <a class="nprpl text1 center" (click)="onLogout()">Kilépés</a>
+    <li *ngIf="userIsAuthenticated" class="flex1" (click)="toggleMenu()">
+      <a class="fpurple pad03 center flex1" (click)="onLogout()">Kilépés</a>
     </li>
   </ul>
 </nav>
 
-<div *ngIf="menuOn" class="itemRemove text2 center w100" (click)="toggleMenu()">Vissza</div>
+<div *ngIf="menuOn" class="itemRemove pad03 center w100" (click)="toggleMenu()">Vissza</div>

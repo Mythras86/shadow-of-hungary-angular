@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ResourcesService } from './resources.service';
-import { karmaUtil, resInterface, tokeUtil } from './resources-utility';
 import { ModalService } from 'src/app/elements/modals/modal.service';
 import { LevelcontrolComponent } from 'src/app/elements/levelcontrol/levelcontrol.component';
+import { resUtil, resInterface, exchangeResUtil } from './resources-utility';
 
 @Component({
   selector: 'app-resources',
@@ -15,73 +15,60 @@ export class ResourcesComponent implements OnInit {
     public s: ResourcesService,
     private modalS: ModalService,
   ) {
-    this.karmaUtil = karmaUtil;
-    this.tokeUtil = tokeUtil;
-    this.szabadKarma = s.getSzabadKarma();
-    this.szabadToke = s.getSzabadToke();
+    this.resUtil = resUtil;
+    this.resTipusok = [...new Set(resUtil.map(x=>x.tipus))];
+    this.szabadKarma = s.getSzabadEroforras('karma');
+    this.szabadToke = s.getSzabadEroforras('toke');
   }
 
-  karmaUtil: Array<resInterface> = [];
-  tokeUtil: Array<resInterface> = [];
+  resTipusok: Array<string> = [];
+  resUtil: Array<resInterface> = [];
   szabadKarma: number = 0;
   szabadToke: number = 0;
 
-  exchangeKarma():void {
+
+  exchange(tipus: string):void {
+    let exCh;
+    exCh = exchangeResUtil.filter(x=> x.tipus == tipus)[0];
+
     this.modalS.openModal(LevelcontrolComponent, {
-      fejlec: 'Karmából Tőke vásárlás',
-      megjegyzes: 'K 1 => 7500 NY',
-      lepes: 10,
-      valto: 7500,
-      tokeKtsg: 0,
-      karmaKtsg: 1,
-      esszKtsg: 0,
-      celErtek: this.s.getSzabadToke(),
-      egyseg: 'NY',
-      minErtek: 0,
-      maxErtek: this.s.getSzabadKarma(),
-      }).subscribe(
-        w => this.updateKarma(w)
-      );
-    }
+      fejlec: exCh.fejlec,
+      megjegyzes: exCh.megjegyzes,
+      lepes: exCh.lepes,
+      valto: exCh.valto,
+      tokeKtsg: exCh.tokeKtsg,
+      karmaKtsg: exCh.karmaKtsg,
+      esszKtsg: exCh.esszKtsg,
+      celErtek: this.s.getSzabadEroforras(exCh.celErtek),
+      egyseg: exCh.lepes,
+      minErtek: exCh.lepes,
+      maxErtek: this.s.getSzabadEroforras(exCh.maxErtek),
+    }).subscribe(
+      w => this.updateRes(w, tipus)
+    );
+  }
 
-    updateKarma(valtozas: number): void {
-      // kifizetés
-      this.s.payKarma(valtozas);
-      // értékszerzés
-      this.s.getToke(valtozas*7500);
-    }
-
-  exchangeToke():void {
-    this.modalS.openModal(LevelcontrolComponent, {
-      fejlec: 'Tőkéből Karma vásárlás',
-      megjegyzes: '7500 NY => K 1',
-      lepes: 10,
-      valto: 1,
-      tokeKtsg: 7500,
-      karmaKtsg: 0,
-      esszKtsg: 0,
-      celErtek: this.s.getSzabadKarma(),
-      egyseg: 'K',
-      minErtek: 0,
-      maxErtek: this.s.getSzabadToke(),
-      }).subscribe(
-        w => this.updateToke(w)
-      );
-    }
-
-    updateToke(valtozas: number): void {
+  updateRes(valtozas: number, tipus: string): void {
+    if (tipus == 'karma') {
       // kifizetés
       this.s.payToke(valtozas*7500);
       // értékszerzés
       this.s.getKarma(valtozas);
     }
-
+    if (tipus == 'toke') {
+      // kifizetés
+      this.s.payKarma(valtozas);
+      // értékszerzés
+      this.s.getToke(valtozas*7500);
+    }
+    return
+  }
 
   ngOnInit(): void {
     this.s.resourcesForm.valueChanges.subscribe(
       ()=> {
-        this.szabadKarma = this.s.getSzabadKarma(),
-        this.szabadToke = this.s.getSzabadToke()
+        this.szabadKarma = this.s.getSzabadEroforras('karma'),
+        this.szabadToke = this.s.getSzabadEroforras('toke')
       }
     )
   }

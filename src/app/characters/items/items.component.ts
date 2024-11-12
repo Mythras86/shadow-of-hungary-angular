@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray } from '@angular/forms';
-import { ItemSelectService } from 'src/app/elements/item-select/item-select.service';
 import { ItemsService } from './items.service';
 import { ItemsModel } from './items.model';
 import { LevelcontrolComponent } from 'src/app/elements/levelcontrol/levelcontrol.component';
@@ -16,7 +15,6 @@ export class ItemsComponent implements OnInit {
 
   constructor(
     public s: ItemsService,
-    public select: ItemSelectService,
     private modalS: ModalService,
     private resS: ResourcesService,
   ){

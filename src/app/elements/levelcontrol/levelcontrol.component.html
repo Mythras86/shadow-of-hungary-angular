@@ -2,37 +2,37 @@
 
   <!-- fejléc -->
 
-  <div class="ntl text2 center w90">{{fejlec}}</div>
+  <div class="ntl pad03 center w90">{{fejlec}}</div>
 
   <!-- vissza gomb -->
 
-  <button class="itemRemove text1 w10" type="button" (click)="onClose()">X</button>
+  <button class="itemRemove pad03 w10" type="button" (click)="onClose()">X</button>
 
   <!-- megjegyzés -->
 
-  <div class="nbl text1 w100">{{megjegyzes}}</div>
+  <div class="nbl pad03 w100">{{megjegyzes}}</div>
 
   <!-- min és max -->
 
-  <div class="nbl w100 center text1">Minimum: {{minErtek}} / Maximum: {{maxErtek}}</div>
+  <div class="nbl w100 center pad03">Minimum: {{minErtek}} / Maximum: {{maxErtek}}</div>
 
   <!-- célérték -->
 
-  <div class="w100 text2 grayCell center">
+  <div class="w100 pad03 grayCell center">
     {{celErtek + ertekValtozas*valto}}
     {{egyseg}}
   </div>
 
  <!-- gombok lépés 1 -->
 
-  <button class="w50 ngrn text1" [disabled]="buttonDisInc(1)"
+  <button class="w50 ngrn pad03" [disabled]="buttonDisInc(1)"
   (click)="changeValue(1)" type="button">
    +
    {{valto}}
    {{egyseg}}
   </button>
 
-  <button class="w50 nrd text1" [disabled]="buttonDisDec(1)"
+  <button class="w50 nrd pad03" [disabled]="buttonDisDec(1)"
   (click)="changeValue(-1)" type="button">
     -
     {{valto}}
@@ -41,14 +41,14 @@
 
   <!-- gombok lépés érték -->
 
-  <button class="w50 ngrn text1" [disabled]="buttonDisInc(lepes)"
+  <button class="w50 ngrn pad03" [disabled]="buttonDisInc(lepes)"
   (click)="changeValue(lepes)" type="button">
     +
     {{lepes*valto}}
     {{egyseg}}
   </button>
 
-  <button class="w50 nrd text1" [disabled]="buttonDisDec(lepes)"
+  <button class="w50 nrd pad03" [disabled]="buttonDisDec(lepes)"
   (click)="changeValue(-lepes)" type="button">
     -
     {{lepes*valto}}
@@ -58,27 +58,27 @@
   <!--forrásértékek -->
 
   <div *ngIf="tokeKtsg>0" class="w100 flexCont">
-    <div class="nrng text1 w100 center">Tőke költség</div>
+    <div class="nrng pad03 w100 center">Tőke költség</div>
     <app-special-field
-    [ertek]="'Fizetendő: ' + (ertekValtozas*tokeKtsg) + ' / Maradt: ' + (resS.getSzabadToke()-ertekValtozas*tokeKtsg)"
+    [ertek]="'Fizetendő: ' + (ertekValtozas*tokeKtsg) + ' / Maradt: ' + (resS.getSzabadEroforras('toke')-ertekValtozas*tokeKtsg)"
     [tipus]="'toke'"
     ></app-special-field>
-    <div class="ngrn text1 w100 center">
+    <div class="ngrn pad03 w100 center">
       {{ertekValtozas*tokeKtsg}} N&#xa5; /
-      {{resS.getSzabadToke()-ertekValtozas*tokeKtsg}} N&#xa5;
+      {{resS.getSzabadEroforras('toke')-ertekValtozas*tokeKtsg}} N&#xa5;
     </div>
   </div>
 
   <div *ngIf="karmaKtsg>0" class="w100 flexCont">
-    <div class="nprpl text1 w100 center">Karma költség</div>
+    <div class="nprpl pad03 w100 center">Karma költség</div>
     <app-special-field
-    [ertek]="'Fizetendő: ' + (ertekValtozas*karmaKtsg) + ' / Maradt: ' + (this.resS.getSzabadKarma()-ertekValtozas*karmaKtsg)"
+    [ertek]="'Fizetendő: ' + (ertekValtozas*karmaKtsg) + ' / Maradt: ' + (this.resS.getSzabadEroforras('karma')-ertekValtozas*karmaKtsg)"
     [tipus]="'karma'"
     ></app-special-field>
   </div>
 
   <div *ngIf="esszKtsg>0" class="w100 flexCont">
-    <div class="nbl text1 w100 center">Esszencia költség</div>
+    <div class="nbl pad03 w100 center">Esszencia költség</div>
     <app-special-field
     [ertek]="'Fizetendő: ' + (ertekValtozas*esszKtsg) + ' / Maradt: ' + (attrS.getTulErtek('esszencia')-ertekValtozas*esszKtsg)"
     [tipus]="'esszencia'"
@@ -90,5 +90,5 @@
   <!-- save button -->
 
   <div class="buttonCont w100 btnBack">
-    <button class="itemGet text1" type="button" (click)="onSave()">Mentés</button>
+    <button class="itemGet pad03" type="button" (click)="onSave()">Mentés</button>
   </div>
