@@ -25,7 +25,7 @@
     <div *ngIf="item.suly" class="w40 nbl pad03">Súly</div>
     <app-special-field *ngIf="item.suly" class="w60"
     [ertek]="item.suly"
-    [tipus]="'suly'"
+    [tipus]="'bg-darkgrey'"
     ></app-special-field>
 
     <div *ngIf="item.celszam" class="w40 nbl pad03">Célszám</div>
@@ -41,7 +41,7 @@
     <div *ngIf="item.felhasznalasNev" class="w40 nbl pad03">{{item.felhasznalasNev}}</div>
     <app-special-field *ngIf="item.felhasznalasNev" class="w60"
     [ertek]="'Max: '+ item.felhasznalasMax! +' / H: '+ item.felhasznalt!"
-    [tipus]="'suly'"
+    [tipus]="'bg-darkgrey'"
     [egyeniEgyseg]="' szfh'"
     ></app-special-field>
 
@@ -53,7 +53,7 @@
       <div *ngFor="let tm of item.tulajdonsagModosito" class="flexCont w100">
         <div class="w60 nbl pad03">{{getTulNev(tm.nev)}}</div>
         <app-special-field class="w40"
-        [tipus]="'szint'"
+        [tipus]="'bg-green'"
         [ertek]="tm.ertek"
         ></app-special-field>
       </div>
@@ -63,47 +63,47 @@
     <div *ngIf="item.tokeKtsgPerSzint" class="w60 nbl pad03 center">Tőke / Szint</div>
     <app-special-field class="w40" *ngIf="item.tokeKtsgPerSzint"
     [ertek] = "item.tokeKtsgPerSzint"
-    [tipus]="'toke'"
+    [tipus]="'bg-orange'"
     ></app-special-field>
 
     <div *ngIf="item.karmaKtsgPerSzint" class="w60 nbl pad03 center">Karma / Szint</div>
     <app-special-field class="w40" *ngIf="item.karmaKtsgPerSzint"
     [ertek] = "item.karmaKtsgPerSzint"
-    [tipus]="'karma'"
+    [tipus]="'bg-purple'"
     ></app-special-field>
 
     <div *ngIf="item.esszenciaKtsgPerSzint" class="w60 nbl pad03 center">Esszencia / Szint</div>
     <app-special-field class="w40" *ngIf="item.esszenciaKtsgPerSzint"
     [ertek] = "item.esszenciaKtsgPerSzint"
-    [tipus]="'esszencia'"
+    [tipus]="'bg-grey'"
     ></app-special-field>
 
     <div *ngIf="item.tokeKtsgSzorzo" class="w60 nbl pad03 center">Tőke Szorzó</div>
     <app-special-field class="w40" *ngIf="item.tokeKtsgSzorzo"
     [ertek] = "item.tokeKtsgSzorzo"
-    [tipus]="'toke'"
+    [tipus]="'bg-orange'"
     ></app-special-field>
 
     <div *ngIf="item.karmaKtsgSzorzo" class="w60 nbl pad03 center">Karma Szorzó</div>
     <app-special-field class="w40" *ngIf="item.karmaKtsgSzorzo"
     [ertek] = "item.karmaKtsgSzorzo"
-    [tipus]="'karma'"
+    [tipus]="'bg-purple'"
     ></app-special-field>
 
     <div *ngIf="item.esszenciaKtsgSzorzo" class="w60 nbl pad03 center">Esszencia Szorzó</div>
     <app-special-field class="w40" *ngIf="item.esszenciaKtsgSzorzo"
     [ertek] = "item.esszenciaKtsgSzorzo"
-    [tipus]="'esszencia'"
+    [tipus]="'bg-grey'"
     ></app-special-field>
 
     <div *ngIf="item.tamadas" class="w50 nbl pad03">{{item.tamadas}}</div>
-    <app-special-field *ngIf="item.akcio" class="w20"
-    [ertek]="item.akcio"
-    [tipus]="'akcio'"
+    <app-special-field *ngIf="item.tamadas" class="w20"
+    [ertek]="item.tamadas"
+    [tipus]="'bg-orange'"
     ></app-special-field>
     <app-special-field *ngIf="item.sebKod" class="w30"
     [ertek]="item.ero +' ('+ item.sebzes +') '+ item.sebKod"
-    [tipus]="'sebzes'"
+    [tipus]="'bg-red'"
     ></app-special-field>
 
     <app-spirit *ngIf="item.csoport == 'Asztrállények'"
@@ -123,38 +123,38 @@
 
   <app-special-field *ngIf="item.szint" class="flex1"
   [ertek]="item.maxSzint ? item.szint +'('+item.maxSzint+')' : item.szint"
-  [tipus]="'szint'"
+  [tipus]="'bg-green'"
   ></app-special-field>
 
   <app-special-field *ngIf="item.felhasznalasNev" class="flex1"
   [ertek]="item.felhasznalasMax! - item.felhasznalt!"
-  [tipus]="'suly'"
+  [tipus]="'bg-darkgrey'"
   [egyeniEgyseg]="' szfh'"
   ></app-special-field>
 
   <app-special-field *ngIf="item.sebKod" class="w30"
-  [ertek]="item.ero +' ('+ item.sebzes +') '+ item.sebKod"
-  [tipus]="'sebzes'"
+  [ertek]="item.ero +' ('+ item.tamadas +') '+ item.sebKod"
+  [tipus]="'bg-red'"
   ></app-special-field>
 
   <app-special-field *ngIf="item.pancel" class="flex1"
   [ertek]="item.pancel"
-  [tipus]="'pancel'"
+  [tipus]="'bg-blue'"
   ></app-special-field>
 
   <app-special-field *ngIf="item.tokeKtsg" class="w30"
   [ertek] = "item.tokeKtsg"
-  [tipus]="'toke'"
+  [tipus]="'bg-orange'"
   ></app-special-field>
 
   <app-special-field *ngIf="item.karmaKtsg" class="flex1"
   [ertek] = "item.karmaKtsg"
-  [tipus]="'karma'"
+  [tipus]="'bg-purple'"
   ></app-special-field>
 
   <app-special-field *ngIf="item.esszenciaKtsg" class="flex1"
   [ertek] = "item.esszenciaKtsg"
-  [tipus]="'esszencia'"
+  [tipus]="'bg-grey'"
   ></app-special-field>
 
 </div>

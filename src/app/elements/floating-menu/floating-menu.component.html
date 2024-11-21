@@ -26,7 +26,7 @@
     <div *ngIf="userIsAuthenticated && mainS.mainCharForm.get('creatorId')?.value == getCreatorId()" class="buttonCont btnBack">
       <div class="itemGet pad03 w100 center" (click)="mainS.sendChar()">+ Karakter mentése +</div>
     </div>
-    <div *ngIf="resS.getSzabadEroforras('karma') >= 2" class="buttonCont btnBack">
+    <div *ngIf="resS.getSzabadEroforras('bg-purple') >= 2" class="buttonCont btnBack">
       <div class="itemGet pad03 w100 center" (click)="skillsS.newSkill()">Új Szakértelem</div>
     </div>
     <div class="buttonCont btnBack">

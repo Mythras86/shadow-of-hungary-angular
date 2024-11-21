@@ -1,60 +1,83 @@
 * {box-sizing: border-box; padding: 0; margin: 0;font-family:Arial, Helvetica, sans-serif}
 
 @import "styles-mixins.scss";
-@import "styles-colors.scss";
 @import "styles-colors-backs.scss";
 @import "styles-colors-fonts.scss";
 @import "styles-buttons.scss";
 @import "styles-positions.scss";
 @import "styles-flex.scss";
 
+@import "styles-app-select-item.scss";
+@import "styles-app-special-field.scss";
+@import "styles-app-authentication.scss";
+@import "styles-app-header.scss";
+
+
 html {
-  width: 100vw;
-  min-height: 100vh;
   background-color: darkgrey;
-  background: black url("../src/assets/images/fakpAlloresize.png") no-repeat scroll center;
-  background-size: cover;
+  display: flex;
 }
 
 body {
-  height: 100vh;
-  width: 100vw;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-  display: block;
-}
-
-ul, li {
-  list-style-type: none;
-  text-align: center;
-}
-
-li :hover {
-  cursor: pointer;
-  background-color: orange;
-  color: black;
+  height: 100%;
+  min-height: 500px;
+  width: 100%;
+  background: black url("../src/assets/images/fakpAlloRes.png") no-repeat center fixed;
+  background-size: cover;
+  @include tablet-landscape {
+    background: black url("../src/assets/images/fakpFekvoRes.png") no-repeat center fixed;
+    background-size: cover;
+  }
 }
 
 .pad03 {
   padding: 0.3rem;
 }
 
-h1 {
+h1, h2, h3 {
+  display: block;
   width: 100%;
-  text-align: center;
-  @extend .bteal;
-  @extend .fteal;
   @extend .pad03;
 }
 
-.overflow {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  min-width: 0px;
+h1 {
+  @extend .bg-black-teal;
+  @extend .color-teal;
+  @extend .center;
+}
+
+h2 {
+  @extend .bg-black-teal;
+  @extend .color-teal;
+}
+
+h3 {
+  @extend .bg-black-teal;
+  @extend .color-teal;
+}
+
+.selected {
+  outline: 2px solid turquoise;
+  outline-offset: -2px;
+}
+
+.pageResize {
+  @include tablet {width: 85%;}
+  @include tablet-landscape {width: 70%;}
+  @include desktop {width: 55%;}
+}
+
+.fejlec {
+  @extend .color-white;
+  @extend .bg-black-white;
+  @extend .pad03;
+  @extend .center;
+}
+
+.tartalom {
+  @extend .bg-black-grey;
+  @extend .pad03;
+  @extend .center;
 }
 
 [hidden] { display: none !important; }

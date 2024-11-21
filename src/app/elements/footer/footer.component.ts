@@ -11,6 +11,7 @@ export class FooterComponent implements OnInit, OnDestroy {
 
   constructor(private authService: AuthService) { }
 
+
   public userIsAuthenticated = false;
   private authListenerSubs!: Subscription;
 

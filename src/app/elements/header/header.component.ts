@@ -1,8 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/authentication/auth.service';
-import { DetailsService } from 'src/app/characters/details/details.service';
 
 @Component({
   selector: 'app-header',
@@ -13,44 +11,38 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   constructor(
     private authService: AuthService,
-    private detailsS: DetailsService,
-    private route: ActivatedRoute
     ) { }
 
-  menuOn: boolean = false;
-  userIsAuthenticated = false;
-  private authListenerSubs!: Subscription;
+    felhasznalo: string = 'te kis halvány bocifing :p';
+    showMenu: boolean = false;
 
-  toggleMenu(): void {
-    this.menuOn = !this.menuOn;
-  }
+    userIsAuthenticated = false;
+    private authListenerSubs!: Subscription;
 
-  name() {
-    return this.authService.getUserName();
-  }
+    onLogout() {
+      this.authService.logoutUser();
+    }
 
-  _id() {
-    return this.authService.getUserId();
-  }
+    setFelhasznalo(): void {
+      this.felhasznalo = this.authService.getUserName();
+    }
 
-  getAName() {
-    return 'Üdv újra itt '+this.name()+'!';
-  }
+    toggleMenu(): void {
+      this.showMenu = !this.showMenu;
+    }
 
-  onLogout() {
-    this.authService.logoutUser();
-  }
+    ngOnInit(): void {
+      this.userIsAuthenticated = this.authService.getIsAuth();
+      this.authListenerSubs = this.authService
+      .getAuthStatusListener()
+      .subscribe(isAuthenticated => {
+        this.userIsAuthenticated = isAuthenticated,
+        this.setFelhasznalo();
+      });
+    }
 
-  ngOnInit(): void {
-    this.userIsAuthenticated = this.authService.getIsAuth();
-    this.authListenerSubs = this.authService
-    .getAuthStatusListener()
-    .subscribe(isAuthenticated => {
-      this.userIsAuthenticated = isAuthenticated;
-    });
-  }
+    ngOnDestroy(): void {
+      this.authListenerSubs.unsubscribe();
+    }
 
-  ngOnDestroy(): void {
-    this.authListenerSubs.unsubscribe();
   }
-}

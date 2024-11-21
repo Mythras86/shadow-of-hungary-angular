@@ -9,10 +9,10 @@ const BACKEND_URL = environment.apiUrl + "/items/";
 
 @Component({
   selector: 'app-item-shop',
-  templateUrl: './item-shop.component.html',
-  styleUrls: ['./item-shop.component.scss']
+  templateUrl: './items-list.component.html',
+  styleUrls: ['./items-list.component.scss']
 })
-export class ItemShopComponent implements OnInit {
+export class ItemsListComponent implements OnInit {
 
   constructor(
     private http: HttpClient,

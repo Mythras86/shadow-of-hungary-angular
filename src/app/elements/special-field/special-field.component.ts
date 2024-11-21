@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostBinding, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-special-field',
@@ -25,32 +25,24 @@ export class SpecialFieldComponent implements OnInit {
   @Input() egyeniEgyseg: any;
   @Input() egyeniSzin: string = '';
 
+  @HostBinding('className') color: string = 'cwhite bg-black-teal';
+
   fieldsUtil: Array<any> = [];
 
-  szin: string = 'grayCell';
   egyseg: any = '';
 
-  setEgyseg(): void {
-    if (this.tipus == '') {
-      this.egyseg == '';
+  getEgyseg(): void {
+    if (this.egyeniEgyseg == '') {
+      this.egyseg = this.egyeniEgyseg;
     } else {
-      const specField = this.fieldsUtil.filter(x=>x.nev == this.tipus)[0];
-      if (this.egyeniEgyseg) {
-        this.egyseg = this.egyeniEgyseg;
-      } else {
-        this.egyseg = specField.egyseg;
-      }
-      if (this.egyeniSzin != '') {
-        this.szin = this.egyeniSzin;
-      } else {
-        this.szin = specField.nev;
-      }
+      const egysegByTipus = this.fieldsUtil.filter(x=> x.nev == this.tipus).map(x=> x.egyseg)[0];
+      this.egyseg = egysegByTipus;
     }
   }
 
-
   ngOnInit(): void {
-    this.setEgyseg();
+    this.getEgyseg();
+    this.color = 'cwhite ' + this.tipus;
   }
 
 }

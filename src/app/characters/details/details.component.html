@@ -1,34 +1,28 @@
-<form [formGroup]="s.detailsForm" *ngIf="s.detailsForm" class="flexWidth" style="--w: 100%">
+<h1 class="bg-black-teal color-teal">Jellemzők</h1>
 
-  <button class="pad03 nbl margBott1" type="button" (click)="fillWithDummy()">fill with dummy</button>
+<form [formGroup]="s.detailsForm" *ngIf="s.detailsForm" class="fixFlex" style="--w: 100%">
 
-  <div class="w{{item.meret}} posRel"
-  *ngFor="let item of details; first as isFirst">
+  <button class="pad03 color-blue bg-black-purple margBott1" type="button" (click)="fillWithDummy()">fill with dummy</button>
 
-    <app-detail *ngIf="item.tipus !== 'kepessegek'"
-    [nev] = "item.nev"
-    [tipus] = "item.tipus"
-    [egyseg] = "item.egyseg"
-    [fcName] = "item.fcName"
-    [megjegyzes] = "item.megjegyzes"
-    [ertek] = "s.getFc(item.fcName)?.value"
-    [lista] = "getList(item.fcName)"
+  @for (d of details; track $index) {
+
+    <app-detail *ngIf="d.tipus !== 'kepessegek'"
+    [nev] = "d.nev"
+    [tipus] = "d.tipus"
+    [egyseg] = "d.egyseg"
+    [fcName] = "d.fcName"
+    [megjegyzes] = "d.megjegyzes"
+    [ertek] = "s.getFc(d.fcName)?.value"
+    [lista] = "getList(d.fcName)"
     ></app-detail>
-
-    <div class="buttonCont posAbs btnBack">
-      <app-btn-options
-        (buttonAction)="setDetail(item.fcName)"
-      ></app-btn-options>
-    </div>
-
-  </div>
+  }
 
   <div class="flexCont ">
     <div class="nwht pad03  center">
       Különleges képességek
     </div>
-    <div *ngIf="getDefault('kepessegek') == null" class="grayCell  pad03"></div>
-    <div class="grayCell  pad03" *ngFor="let item of getDefault('kepessegek')">
+    <div *ngIf="getDefault('kepessegek') == null" class="tartalom"></div>
+    <div class="tartalom" *ngFor="let item of getDefault('kepessegek')">
       {{item}}
     </div>
   </div>

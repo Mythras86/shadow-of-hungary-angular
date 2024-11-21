@@ -1,77 +1,64 @@
-<app-hide-content class="flex1"
-[keyWord]="'mainSite'"
-[arrowColor]="'ngrn'"
+<app-select-item
+[selectedId]="'mainSite'"
+[arrowColor]="'color-green'"
 [arrowBefore]="false"
 >
-  <div headText class="ngrn pad03">special-field test de amúgy ez túl hosszú szöveg, hogy kiférjen</div>
+  <div showSimple class="bg-black-green color-green pad03">special-field test de amúgy ez túl hosszú szöveg, hogy kiférjen</div>
 
-  <div itemCont>
+  <div showExtended>
 
     <app-special-field
     [ertek]="123456789"
-    [tipus]="'karma'"
+    [tipus]="'bg-purple'"
     ></app-special-field>
 
     <app-special-field
     [ertek]="123456789"
-    [tipus]="'toke'"
+    [tipus]="'bg-orange'"
     ></app-special-field>
 
     <app-special-field
     [ertek]="123456789"
-    [tipus]="'esszencia'"
+    [tipus]="'bg-grey'"
     ></app-special-field>
 
     <app-special-field
     [ertek]="123456789"
-    [tipus]="'szint'"
+    [tipus]="'bg-green'"
     ></app-special-field>
 
     <app-special-field
     [ertek]="123456789"
-    [tipus]="'pancel'"
+    [tipus]="'bg-blue'"
     ></app-special-field>
 
     <app-special-field
     [ertek]="123456789"
-    [tipus]="'sebzes'"
+    [tipus]="'bg-red'"
     ></app-special-field>
 
     <app-special-field
     [ertek]="123456789"
-    [tipus]="'suly'"
+    [tipus]="'bg-darkgrey'"
     ></app-special-field>
 
     <app-special-field
     [ertek]="123456789"
-    [tipus]="'akcio'"
+    [tipus]="'bg-orange'"
     ></app-special-field>
-  </div>
-</app-hide-content>
-
-
-<app-select-item [selectedId]="'maincont'">
-  <div showSimple class="nrd pad03">FIGYELEM! Használat előtt olvasd el!</div>
-  <div showExtended class="margTop1">
-    <div class="nrd pad03">FIGYELEM! Használat előtt olvasd el!</div>
-    <div class="nrng pad03">Az oldal jelenleg csak mobilos nézetre van optimalizálva. Csak mobilon, vagy vizsgálat alatt érdemes megtekinteni!</div>
-    <div class="nyllw pad03">A karakterkészítő használatához regisztrálni kell és utána be kell lépni.</div>
-    <div class="nprpl pad03">Regisztrációnál csak kitalált email címet használj, de a formátum legyen helyes!</div>
-    <div class="ngrn pad03">A felhasználói profil szerkesztése még nem elérhető.</div>
-    <div class="ntl pad03">Karaktereket bármely felhasználó készíthet, módosíthat, vagy törölhet, de az egyéb adatbázisokhoz nincs hozzáférés.</div>
-    <div class="nbl pad03">Végül, ez egy hobbiprojekt, tele hibákkal, de tele lehetsőségekkel. Bárki bűvészkedhet vele, de használati útmutatót sajnos nem tudok mellékelni :p Jó szórakozást! :D</div>
   </div>
 </app-select-item>
 
-<app-select-item [selectedId]="'maincont2'">
-  <div showSimple class="nrd pad03">FIGYELEM! Használat előtt olvasd el mégegyszer!</div>
-  <div showExtended class="margTop1">
-    <div class="nrd pad03">FIGYELEM! Használat előtt olvasd el mégegyszer!</div>
-    <div class="nrng pad03">Az oldal jelenleg csak mobilos nézetre van optimalizálva. Csak mobilon, vagy vizsgálat alatt érdemes megtekinteni!</div>
-    <div class="nyllw pad03">A karakterkészítő használatához regisztrálni kell és utána be kell lépni.</div>
-    <div class="nprpl pad03">Regisztrációnál csak kitalált email címet használj, de a formátum legyen helyes!</div>
-    <div class="ngrn pad03">A felhasználói profil szerkesztése még nem elérhető.</div>
-    <div class="ntl pad03">Karaktereket bármely felhasználó készíthet, módosíthat, vagy törölhet, de az egyéb adatbázisokhoz nincs hozzáférés.</div>
-    <div class="nbl pad03">Végül, ez egy hobbiprojekt, tele hibákkal, de tele lehetsőségekkel. Bárki bűvészkedhet vele, de használati útmutatót sajnos nem tudok mellékelni :p Jó szórakozást! :D</div>
+
+<app-select-item [selectedId]="'maincont'" class="margTop1">
+  <div showSimple class="color-red bg-black-red pad03">FIGYELEM! Használat előtt olvasd el!</div>
+  <div showExtended>
+    <div class="color-red bg-black-red pad03">FIGYELEM! Használat előtt olvasd el!</div>
+    <div class="color-orange bg-black-orange pad03">Az oldal jelenleg csak mobilos nézetre van optimalizálva. Csak mobilon, vagy vizsgálat alatt érdemes megtekinteni!</div>
+    <div class="color-yellow bg-black-yellow pad03">A karakterkészítő használatához regisztrálni kell és utána be kell lépni.</div>
+    <div class="color-purple bg-black-purple pad03">Regisztrációnál csak kitalált email címet használj, de a formátum legyen helyes!</div>
+    <div class="color-green bg-black-green pad03">A felhasználói profil szerkesztése még nem elérhető.</div>
+    <div class="color-teal bg-black-teal pad03">Karaktereket bármely felhasználó készíthet, módosíthat, vagy törölhet, de az egyéb adatbázisokhoz nincs hozzáférés.</div>
+    <div class="color-blue bg-black-purple pad03">Végül, ez egy hobbiprojekt, tele hibákkal, de tele lehetsőségekkel. Bárki bűvészkedhet vele, de használati útmutatót sajnos nem tudok mellékelni :p Jó szórakozást! :D</div>
   </div>
 </app-select-item>

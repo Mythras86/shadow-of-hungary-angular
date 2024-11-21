@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -7,9 +9,10 @@ export class SelectItemService {
 
   constructor() { }
 
-  selected: Array<string> = [];
+  selected = new BehaviorSubject('');
 
-  clearSelected() {
-    this.selected = [];
+  updateSelected(value: any): void {
+    this.selected.next(value);
   }
+
 }

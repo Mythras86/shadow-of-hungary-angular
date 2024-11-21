@@ -4,3 +4,7 @@
 @else {
   <ng-content select="[showExtended]"></ng-content>
 }
+
+<div class="arrowCont {{arrowBefore ? 'left' : 'right'}}">
+    <div [ngClass]=arrowColor class="{{showSimple ? 'arrow' : 'arrow down'}}">&#10148;</div>
+</div>

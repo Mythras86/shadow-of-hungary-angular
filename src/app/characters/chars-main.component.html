@@ -1,28 +1,34 @@
-<form class="flexCont w100 margTop1" *ngIf="s.mainCharForm" [formGroup]="s.mainCharForm">
+@if (s.mainCharForm) {
 
-  @if (s.filter == '' || s.filter ==  'Jellemzők') {
-    <h1>Jellemzők</h1>
-    <app-details></app-details>
-  }
-  @if (s.filter == '' || s.filter ==  'Erőforrások') {
-    <h1>Erőforrások</h1>
-    <app-resources></app-resources>
-  }
-  @if (s.filter == '' || s.filter ==  'Tulajdonságok') {
-    <h1>Tulajdonságok</h1>
-    <app-attributes></app-attributes>
-  }
-  @if (s.filter == '' || s.filter ==  'Szakértelmek') {
-    <h1>Szakértelmek</h1>
-    <app-skills></app-skills>
-  }
-  @if (s.filter == '' || s.filter ==  'Állapotjelző') {
-    <h1>Állapotjelző</h1>
-    <app-status></app-status>
-  }
-  @if (s.filter == '' || s.filter ==  'Eszközök') {
-    <h1>Eszközök</h1>
-    <app-items></app-items>
-  }
+  <h1>yes</h1>
+  <h2>yes</h2>
+  <h3>yes</h3>
 
-</form>
+  <form [formGroup]="s.mainCharForm">
+
+    @if (s.filter == '' || s.filter ==  'Jellemzők') {
+      <app-details></app-details>
+    }
+    @if (s.filter == '' || s.filter ==  'Erőforrások') {
+      <h1>Erőforrások</h1>
+      <app-resources></app-resources>
+    }
+    @if (s.filter == '' || s.filter ==  'Tulajdonságok') {
+      <h1>Tulajdonságok</h1>
+      <app-attributes></app-attributes>
+    }
+    @if (s.filter == '' || s.filter ==  'Szakértelmek') {
+      <h1>Szakértelmek</h1>
+      <app-skills></app-skills>
+    }
+    @if (s.filter == '' || s.filter ==  'Állapotjelző') {
+      <h1>Állapotjelző</h1>
+      <app-status></app-status>
+    }
+    @if (s.filter == '' || s.filter ==  'Eszközök') {
+      <h1>Eszközök</h1>
+      <app-items></app-items>
+    }
+
+  </form>
+}

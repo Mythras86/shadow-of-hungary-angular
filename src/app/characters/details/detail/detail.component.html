@@ -1,31 +1,31 @@
 <!-- fejléc -->
-<div *ngIf="!editMode" class="nwht pad03 center " >
+<div *ngIf="!editMode" class="fejlec" >
   {{nev}}
 </div>
-<div *ngIf="editMode" class="nwht pad03 center " >
+<div *ngIf="editMode" class="fejlec" >
   {{nev}}
 </div>
 
 <!-- visszagomb -->
 <button *ngIf="editMode" class="itemRemove pad03 center" type="button" (click)="onClose()">X</button>
 
-<div *ngIf="!editMode" class="grayCell pad03  center" [style.backgroundColor]="(tipus == 'color' ? ertek : 'fff')">
+<div *ngIf="!editMode" class="tartalom" [style.backgroundColor]="(tipus == 'color' ? ertek : 'fff')">
   {{ertek}} {{egyseg}}
 </div>
 
 <!-- megjegyzés -->
-<div *ngIf="editMode" class=" nbl pad03 center">
+<div *ngIf="editMode" class=" color-blue pad03 center">
   {{megjegyzes}}
 </div>
 
 
 <!-- input -->
-<input *ngIf="editMode && tipus == 'text'" class=" grayCell pad03 center" [id]="fcName" [type]="tipus" [value]="ertek">
+<input *ngIf="editMode && tipus == 'text'" class="fejlec" [id]="fcName" [type]="tipus" [value]="ertek">
 
 <!-- color input -->
 <input *ngIf="editMode && tipus == 'color'"
 list="presetcolors"
-class="grayCell pad03 center"
+class="fejlec"
 [id]="fcName"
 type="color"
 [value]="ertek">
@@ -40,19 +40,19 @@ type="color"
 
 <!-- normal number input -->
 <div *ngIf="editMode && tipus == 'number'" class="flexCont">
-  <input class="grayCell pad03 center" [id]="fcName" type="number" [value]="ertek">
-  <div class="grayCell pad03 center">{{egyseg}}</div>
+  <input class="fejlec" [id]="fcName" type="number" [value]="ertek">
+  <div class="fejlec">{{egyseg}}</div>
 </div>
 
 <!-- list input -->
-<select *ngIf="editMode && tipus == 'select'" class=" grayCell pad03 center" [id]="fcName">
+<select *ngIf="editMode && tipus == 'select'" class="fejlec" [id]="fcName">
   <option selected [value]="ertek">{{ertek}}</option>
   <option *ngFor="let listitem of lista" [value]=listitem>{{listitem}}</option>
 </select>
 
 <!-- input field with list -->
 
-<input *ngIf="editMode && tipus == 'inpselect'" class=" grayCell pad03 center" type="pad03" [id]="fcName" [attr.list]="fcName+'x'" [value]="ertek"/>
+<input *ngIf="editMode && tipus == 'inpselect'" class="fejlec" type="pad03" [id]="fcName" [attr.list]="fcName+'x'" [value]="ertek"/>
 <datalist *ngIf="tipus == 'inpselect'" [id]="fcName+'x'">
   <option *ngFor="let listitem of lista" [value]=listitem>{{listitem}}</option>
 </datalist>

@@ -1,33 +1,46 @@
-<form id="userLogin" class="bgreen margTop1 flexCont" [formGroup]="userLoginForm" (ngSubmit)="onLogin()">
+<h1 class="margTop1">Belépés</h1>
+<form id="userLogin" class="bg-black-green pageResize" [formGroup]="userLoginForm" (ngSubmit)="onLogin()">
 
-  <h2 class="fgreen margTop1">Belépés</h2>
-
-  <div class="w80 margTop1">
-    <label class="fwhite" for="loginEmail">Email Cím</label>
+  <div class="authCont margTop1">
+    <label class="color-white bg-black-green" for="loginEmail">Email Cím</label>
     <input id="loginEmail" type="email" formControlName="email" placeholder="E-amil cím">
-    <label class="fwhite" for="loginPass">Jelszó</label>
+    <label class="color-white bg-black-green" for="loginPass">Jelszó</label>
     <input id="loginPass" type="password" formControlName="pass" placeholder="Jelszó">
   </div>
 
-  <button class="w80 itemGet margTop1 margBott1 pad03" type="submit" [disabled]="!userLoginForm.valid">
+  <p class="color-green margTop1 center">
     "Tudod a szabályokat: lőj pontosan, spórolj a skulóval és soha, de SOHA ne üzletelj egy Sárkánnyal!"
-  </button>
+  </p>
+
+  <div class="center">
+    <button class="bg-green color-white pad03 margTop1 margBott1" type="submit" [disabled]="!userLoginForm.valid">
+      Nyugi wazze, tudom a járást!
+    </button>
+  </div>
+
 
 </form>
 
-<form id="userReg" class="bred margTop1 flexCont" [formGroup]="userRegForm" (ngSubmit)="onSubmit()">
+<h1 class="margTop1">Regisztráció</h1>
+<form id="userReg" class="bg-black-orange pageResize" [formGroup]="userRegForm" (ngSubmit)="onSubmit()">
 
-  <p class="fwhite">"Csatlakozz az Árnyakhoz, de sose feledd: ha túl mélyen meredsz a sötétségbe, az visszatekint majd rád!"</p>
-
-  <div class="w80">
-    <label class="fwhite" for="regNev">Felhasználónév</label>
-    <input id="regNev" type="pad03" formControlName="name" placeholder="Név">
-    <label class="fwhite" for="regEmail">Email Cím</label>
+  <div class="authCont margTop1">
+    <label class="color-white bg-black-orange" for="regNev">Felhasználónév</label>
+    <input id="regNev" type="text" formControlName="name" placeholder="Név">
+    <label class="color-white bg-black-orange" for="regEmail">Email Cím</label>
     <input id="regEmail" type="email" formControlName="email" placeholder="E-amil cím">
-    <label class="fwhite" for="regPass">Jelszó</label>
+    <label class="color-white bg-black-orange" for="regPass">Jelszó</label>
     <input id="regPass" type="password" formControlName="pass" placeholder="Jelszó">
   </div>
 
-  <button class="w50 itemGet margTop1 margBott1" type="submit" [disabled]="!userRegForm.valid">Regisztráció</button>
+  <p class="color-orange margTop1 center">
+    "Csatlakozz az Árnyakhoz, de sose feledd: ha túl mélyen meredsz a sötétségbe, az visszatekint majd rád és a mélybe húz!"
+  </p>
+
+  <div class="center">
+    <button class="color-white bg-orange pad03 margTop1 margBott1" type="submit" [disabled]="!userRegForm.valid">
+      Elég a fecsegésből, passzold ide a cuccot!
+    </button>
+  </div>
 
 </form>
