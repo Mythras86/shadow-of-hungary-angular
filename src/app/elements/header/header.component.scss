@@ -1,0 +1,73 @@
+@import "../../../styles/host.scss";
+@import "../../../styles.scss";
+@import "../../../styles/backgroundColors.scss";
+@import "../../../styles/colors.scss";
+
+:host {
+  @extend .flexHost;
+}
+
+.headWrap, nav {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  @extend .bg-black-purple;
+}
+
+div {
+  text-align: center;
+  font-size: 1.7rem;
+  @include tablet {font-size: 1.8rem;}
+  @include tablet-landscape {font-size: 1.9rem;}
+  @include desktop {font-size: 2rem;}
+
+}
+
+.burger {
+  @extend .color-yellow;
+  @extend .pad03;
+  @extend .center;
+  flex: 0 0 3rem;
+}
+
+.bezaras {
+  font-size: 1.3rem;
+  @extend .bg-red;
+  @extend .color-white;
+  @extend .pad03;
+  @extend .center;
+  flex: 0 0 3rem;
+}
+
+.line {
+  @extend .pad03;
+  @extend .color-green;
+  flex: 1 1 auto;
+}
+
+ul, li {
+  width: 100%;
+  list-style-type: none;
+  text-align: center;
+}
+
+li {
+  @extend .flex1;
+  @extend .bg-black-purple;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+  font-size: 1.2rem;
+  @extend .color-purple;
+  @extend .pad03;
+  @extend .center;
+}
+
+li :hover {
+  cursor: pointer;
+  background-color: orange;
+  color: black;
+}

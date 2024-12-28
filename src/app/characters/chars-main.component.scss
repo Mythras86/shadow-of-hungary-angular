@@ -1,0 +1,9 @@
+@import "../../styles/host.scss";
+
+:host {
+  width: 100%;
+}
+
+form {
+  @extend .flexHost;
+}

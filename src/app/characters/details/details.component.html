@@ -1,30 +1,15 @@
-<h1 class="bg-black-teal color-teal">Jellemzők</h1>
+@if (s.detailsForm) {
+  <form [formGroup]="s.detailsForm">
 
-<form [formGroup]="s.detailsForm" *ngIf="s.detailsForm" class="fixFlex" style="--w: 100%">
+    <!-- ha már az alapjellemzők ki lettek töltve -->
+    @for (detail of detailsUtil; track $index) {
+      @if (alapJellemzok && detail.szerkesztes == false) {
+        <app-detail [ngClass]="{selected: s.selected == detail.fcName}"
+        [detail] = "detail"
+        [control] = "s.getFc(detail.fcName)"
+        ></app-detail>
+      }
+    }
 
-  <button class="pad03 color-blue bg-black-purple margBott1" type="button" (click)="fillWithDummy()">fill with dummy</button>
-
-  @for (d of details; track $index) {
-
-    <app-detail *ngIf="d.tipus !== 'kepessegek'"
-    [nev] = "d.nev"
-    [tipus] = "d.tipus"
-    [egyseg] = "d.egyseg"
-    [fcName] = "d.fcName"
-    [megjegyzes] = "d.megjegyzes"
-    [ertek] = "s.getFc(d.fcName)?.value"
-    [lista] = "getList(d.fcName)"
-    ></app-detail>
-  }
-
-  <div class="flexCont ">
-    <div class="nwht pad03  center">
-      Különleges képességek
-    </div>
-    <div *ngIf="getDefault('kepessegek') == null" class="tartalom"></div>
-    <div class="tartalom" *ngFor="let item of getDefault('kepessegek')">
-      {{item}}
-    </div>
-  </div>
-
-</form>
+  </form>
+}

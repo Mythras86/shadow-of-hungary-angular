@@ -1,17 +1,13 @@
+
+@import "../src/styles/backgroundColors.scss";
+@import "../src/styles/buttons.scss";
+@import "../src/styles/colors.scss";
+@import "../src/styles/flex.scss";
+@import "../src/styles/host.scss";
+@import "../src/styles/mixins.scss";
+@import "../src/styles/positions.scss";
+
 * {box-sizing: border-box; padding: 0; margin: 0;font-family:Arial, Helvetica, sans-serif}
-
-@import "styles-mixins.scss";
-@import "styles-colors-backs.scss";
-@import "styles-colors-fonts.scss";
-@import "styles-buttons.scss";
-@import "styles-positions.scss";
-@import "styles-flex.scss";
-
-@import "styles-app-select-item.scss";
-@import "styles-app-special-field.scss";
-@import "styles-app-authentication.scss";
-@import "styles-app-header.scss";
-
 
 html {
   background-color: darkgrey;
@@ -30,6 +26,10 @@ body {
   }
 }
 
+.overflowHidden {
+  overflow: hidden;
+}
+
 .pad03 {
   padding: 0.3rem;
 }
@@ -44,11 +44,20 @@ h1 {
   @extend .bg-black-teal;
   @extend .color-teal;
   @extend .center;
+  font-size: 1.7rem;
+  @include tablet {font-size: 1.8rem;}
+  @include tablet-landscape {font-size: 1.9rem;}
+  @include desktop {font-size: 2rem;}
 }
 
 h2 {
   @extend .bg-black-teal;
   @extend .color-teal;
+  font-size: 1.2rem;
+  @include tablet {font-size: 1.3rem;}
+  @include tablet-landscape {font-size: 1.4rem;}
+  @include desktop {font-size: 1.5rem;}
+
 }
 
 h3 {
@@ -61,23 +70,35 @@ h3 {
   outline-offset: -2px;
 }
 
-.pageResize {
-  @include tablet {width: 85%;}
-  @include tablet-landscape {width: 70%;}
-  @include desktop {width: 55%;}
-}
-
 .fejlec {
   @extend .color-white;
   @extend .bg-black-white;
   @extend .pad03;
   @extend .center;
+  width: 100%;
 }
 
 .tartalom {
   @extend .bg-black-grey;
   @extend .pad03;
   @extend .center;
+  width: 100%;
 }
 
 [hidden] { display: none !important; }
+
+.editMode {
+  background: black url("../src/assets/images/fakpAlloRes.png") no-repeat center fixed;
+  background-size: cover;
+  @include tablet-landscape {
+    background: black url("../src/assets/images/fakpFekvoRes.png") no-repeat center fixed;
+    background-size: cover;
+  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 20;
+}

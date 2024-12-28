@@ -77,16 +77,16 @@ export class CharsMainService {
     let charData: CharModel;
     charData = {
       //szöveges
-      teljesnev: details.value.teljesnev,
+      szuletesiNev: details.value.szuletesiNev,
       becenev: details.value.becenev,
       alnev: details.value.alnev,
       testalkat: details.value.testalkat,
       hajstilus: details.value.hajstilus,
       //értékválasztó
-      nem: details.value.nem,
+      szuletesiNem: details.value.szuletesiNem,
       dns: details.value.dns,
       anyanyelv: details.value.anyanyelv,
-      eletkor: details.value.eletkor,
+      szuletesiDatum: details.value.szuletesiDatum,
       magassag: details.value.magassag,
       testsuly: details.value.testsuly,
       //szín

@@ -1,63 +1,54 @@
 <!-- fejléc -->
-<div *ngIf="!editMode" class="fejlec" >
-  {{nev}}
-</div>
-<div *ngIf="editMode" class="fejlec" >
-  {{nev}}
-</div>
-
-<!-- visszagomb -->
-<button *ngIf="editMode" class="itemRemove pad03 center" type="button" (click)="onClose()">X</button>
-
-<div *ngIf="!editMode" class="tartalom" [style.backgroundColor]="(tipus == 'color' ? ertek : 'fff')">
-  {{ertek}} {{egyseg}}
+<div class="fejlec">
+  {{detail.nev}}
 </div>
 
 <!-- megjegyzés -->
-<div *ngIf="editMode" class=" color-blue pad03 center">
-  {{megjegyzes}}
-</div>
+@if (editMode) {
+  <div class="color-blue bg-black-blue pad03 center">
+    {{detail.megjegyzes}}
+  </div>
+}
 
+@if (!editMode) {
+  <div class="tartalom" [style.backgroundColor]="(detail.tipus == 'color' ? ertek : 'fff')">
+    {{ertek}} {{detail.egyseg}}
+  </div>
+}
 
-<!-- input -->
-<input *ngIf="editMode && tipus == 'text'" class="fejlec" [id]="fcName" [type]="tipus" [value]="ertek">
+<!-- text input -->
+@if (detail.tipus == 'text' && editMode && detail.fcName !== 'dns') {
+  <input [id]="detail.fcName" [formControl]="control" [type]="detail.tipus" [value]="ertek" [placeholder]="detail.nev">
+}
+
 
 <!-- color input -->
-<input *ngIf="editMode && tipus == 'color'"
-list="presetcolors"
-class="fejlec"
-[id]="fcName"
-type="color"
-[value]="ertek">
-<datalist *ngIf="tipus == 'color'" id="presetcolors">
-  <option>#c58c85</option>
-  <option>#ecbcb4</option>
-  <option>#d1a3a4</option>
-  <option>#a1665e</option>
-  <option>#503335</option>
-  <option>#592f2a</option>
-</datalist>
+@if (detail.tipus == 'color' && editMode) {
+  <input [id]="detail.fcName" [formControl]="control" [type]="detail.tipus" [value]="ertek">
+}
 
 <!-- normal number input -->
-<div *ngIf="editMode && tipus == 'number'" class="flexCont">
-  <input class="fejlec" [id]="fcName" type="number" [value]="ertek">
-  <div class="fejlec">{{egyseg}}</div>
-</div>
+@if (detail.tipus == 'number' && editMode) {
+  <div class="flexCont">
+    <input [id]="detail.fcName" [formControl]="control" [type]="detail.tipus" [placeholder]="detail.nev">
+    <div>{{detail.egyseg}}</div>
+  </div>
+}
 
-<!-- list input -->
-<select *ngIf="editMode && tipus == 'select'" class="fejlec" [id]="fcName">
-  <option selected [value]="ertek">{{ertek}}</option>
-  <option *ngFor="let listitem of lista" [value]=listitem>{{listitem}}</option>
-</select>
-
-<!-- input field with list -->
-
-<input *ngIf="editMode && tipus == 'inpselect'" class="fejlec" type="pad03" [id]="fcName" [attr.list]="fcName+'x'" [value]="ertek"/>
-<datalist *ngIf="tipus == 'inpselect'" [id]="fcName+'x'">
-  <option *ngFor="let listitem of lista" [value]=listitem>{{listitem}}</option>
-</datalist>
+<!-- listázás -->
+@if (detail.lista && editMode) {
+  @for (elem of detail.lista; track $index) {
+    <div class="fejlec" [ngClass]="elem==valasztottErtek? 'selected' : ''" (click)="selectOption(elem)">{{elem}}</div>
+  }
+}
 
 <!-- gombok -->
-<div *ngIf="editMode" class="buttonCont  margTop1">
-  <button class="itemGet pad03" type="button" (click)="onSave(fcName)">Mentés</button>
+<div  class="buttonCont">
+  @if (editMode) {
+    <button class="buttonYes" type="button" (click)="onSave()">Mentés</button>
+    <button class="buttonNo" type="button" (click)="cancel()">Kilépés</button>
+  }
+  @if (!editMode && s.selected == detail.fcName) {
+    <button class="buttonOptions" type="button" (click)="toggleEdit()">{{detail.nev}} szerkesztés</button>
+  }
 </div>

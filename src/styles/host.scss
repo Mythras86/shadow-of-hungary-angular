@@ -1,0 +1,15 @@
+@import "mixins.scss";
+
+.flexHost {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.pageResize {
+  @include tablet {width: 85%;}
+  @include tablet-landscape {width: 70%;}
+  @include desktop {width: 55%;}
+}

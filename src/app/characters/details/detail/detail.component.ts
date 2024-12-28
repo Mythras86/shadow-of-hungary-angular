@@ -1,53 +1,92 @@
-import { Component, Input } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Component, Input, OnInit } from '@angular/core';
+import { detailsInterface } from '../details.model-utility';
+import { DetailsService } from '../details.service';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
-  styleUrls: ['./detail.component.css']
+  styleUrls: ['./detail.component.css'],
+  host: {
+    '[class.editMode]': 'editMode',
+    '(click)': 'editMode? "" : toggleSelect()',
+  }
 })
-export class DetailComponent {
+export class DetailComponent implements OnInit {
 
   constructor(
-  ) {}
-
-  @Input() editMode: boolean = false;
-  @Input() nev: string = '';
-  @Input() tipus: string = '';
-  @Input() egyseg: string = '';
-  @Input() fcName: string = '';
-  @Input() megjegyzes: string = '';
-  @Input() meret: string = '';
-  @Input() ertek: any;
-  @Input() lista: Array<any> = [];
-
-  public canBeClosed: boolean = true;
-  closeEvent: Subject<any> = new Subject;
-
-  loadData(modalData: any): void {
-    this.editMode = modalData.editMode;
-    this.nev = modalData.nev;
-    this.tipus = modalData.tipus;
-    this.egyseg = modalData.egyseg;
-    this.fcName = modalData.fcName;
-    this.megjegyzes = modalData.megjegyzes;
-    this.ertek = modalData.ertek;
-    this.lista = modalData.lista;
+    public s: DetailsService,
+  ) {
+    this.detail = {
+      nev: '',
+      fcName: '',
+      tipus: '',
+      megjegyzes: '',
+      egyseg: '',
+      szerkesztes: false,
+      lista: []
+    }
+    this.ertek = '';
+    this.valasztottErtek = '';
   }
 
-  onSave(id:string) {
-    const input:any = (<HTMLInputElement>document.getElementById(id)).value;
-    if (this.tipus == 'number') {
-      this.closeEvent.next(Math.round(input*100)/100);
-      this.closeEvent.complete();
+  @Input() detail: detailsInterface;
+  @Input() control!: FormControl;
+
+  ertek: string | number;
+  valasztottErtek: string | number;
+  editMode: boolean = false;
+  selectedMe: boolean = false;
+
+  toggleSelect(): void {
+    if (this.s.selected == '' || this.s.selected !== this.detail.fcName) {
+      this.s.selected = this.detail.fcName;
+      this.selectedMe = true;
     } else {
-      this.closeEvent.next(input);
-      this.closeEvent.complete();
+      this.s.selected = '';
+      this.selectedMe = false;
     }
   }
 
-  onClose() {
-    this.closeEvent.complete();
+  toggleEdit(): void {
+    this.editMode = !this.editMode;
+    if (this.editMode) {
+      document.body.classList.add('overflowHidden');
+    } else {
+      document.body.classList.remove('overflowHidden');
+    }
+  }
+
+  onSave(): void {
+    const control = this.s.getFc(this.detail.fcName);
+    if (this.valasztottErtek !== '') {
+      control.setValue(this.valasztottErtek);
+    } else {
+      control.setValue(this.ertek);
+    }
+    this.toggleEdit();
+    this.toggleSelect();
+  }
+
+  cancel(): void {
+    this.valasztottErtek = '';
+    this.toggleEdit();
+    this.toggleSelect();
+  }
+
+  selectOption(selected: string | number): void {
+    this.valasztottErtek = selected;
+  }
+
+  getErtek(): string | number {
+    const ertek = this.s.getFc(this.detail.fcName).value;
+    return this.ertek = ertek;
+  }
+
+  ngOnInit(): void {
+    this.s.detailsForm.get(this.detail.fcName)?.valueChanges.subscribe(
+      ()=>this.getErtek()
+    );
   }
 
 }

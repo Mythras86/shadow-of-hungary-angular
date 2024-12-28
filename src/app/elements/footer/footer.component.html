@@ -1,8 +1,13 @@
-<a class="center margTop1" routerLink="/">Főoldal</a>
-<a class="center" routerLink="/profil">Profil</a>
-<a class="center" routerLink="/charslist">Karakterek</a>
-<a class="center margBott1" *ngIf="!userIsAuthenticated" routerLink="/auth">Belépés</a>
-<a class="center margBott1" *ngIf="userIsAuthenticated" (click)="onLogout()">Kilépés</a>
+<a class="margTop1" routerLink="/">Főoldal</a>
+<a class="" routerLink="/profil">Profil</a>
+<a class="" routerLink="/charslist">Karakterek</a>
+@if (!userIsAuthenticated) {
+  <a class="margBott1" routerLink="/auth">Belépés</a>
+}
+@else {
+  <a class="margBott1" (click)="onLogout()">Kilépés</a>
+}
+
 <div class="color-teal creator">
   Karakterlap by Mythras
 </div>

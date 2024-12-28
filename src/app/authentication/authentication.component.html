@@ -1,14 +1,14 @@
 <h1 class="margTop1">Belépés</h1>
 <form id="userLogin" class="bg-black-green pageResize" [formGroup]="userLoginForm" (ngSubmit)="onLogin()">
 
-  <div class="authCont margTop1">
+  <div class="authCont">
     <label class="color-white bg-black-green" for="loginEmail">Email Cím</label>
     <input id="loginEmail" type="email" formControlName="email" placeholder="E-amil cím">
     <label class="color-white bg-black-green" for="loginPass">Jelszó</label>
     <input id="loginPass" type="password" formControlName="pass" placeholder="Jelszó">
   </div>
 
-  <p class="color-green margTop1 center">
+  <p class="color-green center">
     "Tudod a szabályokat: lőj pontosan, spórolj a skulóval és soha, de SOHA ne üzletelj egy Sárkánnyal!"
   </p>
 
@@ -24,7 +24,7 @@
 <h1 class="margTop1">Regisztráció</h1>
 <form id="userReg" class="bg-black-orange pageResize" [formGroup]="userRegForm" (ngSubmit)="onSubmit()">
 
-  <div class="authCont margTop1">
+  <div class="authCont">
     <label class="color-white bg-black-orange" for="regNev">Felhasználónév</label>
     <input id="regNev" type="text" formControlName="name" placeholder="Név">
     <label class="color-white bg-black-orange" for="regEmail">Email Cím</label>
@@ -33,7 +33,7 @@
     <input id="regPass" type="password" formControlName="pass" placeholder="Jelszó">
   </div>
 
-  <p class="color-orange margTop1 center">
+  <p class="color-orange center">
     "Csatlakozz az Árnyakhoz, de sose feledd: ha túl mélyen meredsz a sötétségbe, az visszatekint majd rád és a mélybe húz!"
   </p>
 

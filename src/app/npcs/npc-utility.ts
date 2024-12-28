@@ -4,7 +4,7 @@ export const npcUtil: Array<any> = [
   {
     nev: 'Frieza',
     dns: 'troll',
-    nem: 'férfi',
+    szuletesiNem: 'férfi',
     anyanyelv: 'Magyar',
     kor: 39,
     magassag: 235,
@@ -25,7 +25,7 @@ export const npcUtil: Array<any> = [
   {
     nev: 'Starscream',
     dns: 'troll',
-    nem: 'férfi',
+    szuletesiNem: 'férfi',
     anyanyelv: 'Magyar',
     kor: 25,
     magassag: 290,
@@ -46,7 +46,7 @@ export const npcUtil: Array<any> = [
   {
     nev: 'Skeletor',
     dns: 'troll',
-    nem: 'férfi',
+    szuletesiNem: 'férfi',
     anyanyelv: 'Magyar',
     kor: 52,
     magassag: 310,
@@ -67,7 +67,7 @@ export const npcUtil: Array<any> = [
   {
     nev: 'Rita the witch',
     dns: 'troll',
-    nem: 'nő',
+    szuletesiNem: 'nő',
     anyanyelv: 'Magyar',
     kor: 33,
     magassag: 265,
@@ -88,7 +88,7 @@ export const npcUtil: Array<any> = [
   {
     nev: 'Queen Beryl',
     dns: 'troll',
-    nem: 'nő',
+    szuletesiNem: 'nő',
     anyanyelv: 'Magyar',
     kor: 28,
     magassag: 270,
@@ -109,7 +109,7 @@ export const npcUtil: Array<any> = [
   {
     nev: 'Farkas -Csodálatos Pókarc- János',
     dns: 'pókszellem',
-    nem: 'férfi',
+    szuletesiNem: 'férfi',
     anyanyelv: 'Magyar',
     kor: 35,
     magassag: 175,
@@ -135,7 +135,7 @@ export const npcUtil: Array<any> = [
   {
     nev: 'Adolf von Kartoffelsuppe főhadnagy',
     dns: 'ember',
-    nem: 'férfi',
+    szuletesiNem: 'férfi',
     anyanyelv: 'Német',
     kor: 45,
     magassag: 170,
@@ -159,7 +159,7 @@ export const npcUtil: Array<any> = [
   {
     nev: 'Krueger Mátyás',
     dns: 'ember',
-    nem: 'férfi',
+    szuletesiNem: 'férfi',
     anyanyelv: 'Magyar',
     kor: 42,
     magassag: 181,
@@ -181,7 +181,7 @@ export const npcUtil: Array<any> = [
   {
     nev: 'Lecter Ádám',
     dns: 'ember',
-    nem: 'férfi',
+    szuletesiNem: 'férfi',
     anyanyelv: 'Magyar',
     kor: 51,
     magassag: 175,
@@ -203,7 +203,7 @@ export const npcUtil: Array<any> = [
   {
     nev: 'Szomorú Annabelle',
     dns: 'ember',
-    nem: 'nő',
+    szuletesiNem: 'nő',
     anyanyelv: 'Magyar',
     kor: 25,
     magassag: 170,
@@ -225,7 +225,7 @@ export const npcUtil: Array<any> = [
   {
     nev: 'Kredenc',
     dns: 'törpe',
-    nem: 'férfi',
+    szuletesiNem: 'férfi',
     anyanyelv: 'Magyar',
     kor: 55,
     magassag: 135,
@@ -251,7 +251,7 @@ export const npcUtil: Array<any> = [
   {
     nev: 'Horváth Norbert admirális',
     dns: 'ember',
-    nem: 'férfi',
+    szuletesiNem: 'férfi',
     anyanyelv: 'Magyar',
     kor: 62,
     magassag: 182,
@@ -277,7 +277,7 @@ export const npcUtil: Array<any> = [
   {
     nev: 'Kovács Albert ezredes',
     dns: 'ember',
-    nem: 'férfi',
+    szuletesiNem: 'férfi',
     anyanyelv: 'Magyar',
     kor: 56,
     magassag: 183,
@@ -310,7 +310,7 @@ export const npcUtil: Array<any> = [
 // {
 //   nev: '',
 //   dns: '',
-//   nem: '',
+//   szuletesiNem: '',
 //   kor: 0,
 //   magassag: 0,
 //   suly: 0,

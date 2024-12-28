@@ -1,4 +1,4 @@
-  <div class="buttonCont w100 center btnBack">
+  <div class="buttonCont center btnBack">
     <button class="itemGet pad03" (click)="s.newChar()">Új Karakter</button>
   </div>
 
@@ -11,7 +11,7 @@
       <div class="flexCont margBott1" *ngIf="csoport == getCsoport(char.creatorId!)">
 
         <div class="w80 posRel">
-          <div class="ngrn w100 pad03 center">{{char.teljesnev}}</div>
+          <div class="ngrn w100 pad03 center">{{char.szuletesiNev}}</div>
           <div class="nbl w100 pad03">Nyelv: {{char.anyanyelv}}</div>
           <div class="nbl w100 pad03">DNS: {{char.dns}}</div>
 

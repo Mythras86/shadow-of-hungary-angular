@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { DetailsService } from '../details/details.service';
-import { dnsUtil } from '../details/details-utility';
+import { dnsUtil } from '../details/details.model-dns';
 import { AttributesFG, AttributesModel } from './attributes.model';
 
 @Injectable({
@@ -98,24 +98,9 @@ export class AttributesService {
   getTulErtek(fcName: string): number {
     const ertek = this.attributesForm.get(fcName)?.value;
     const ertekMod = this.attributesForm.get(fcName+'Mod')?.value;
-    const teljes = ertek + ertekMod + this.getDnsMod(fcName);
+    const teljes = ertek + ertekMod;
     return teljes;
   }
 
-  getMod(fcName: string):number {
-    return 0;
-  }
-
-  getDnsMod(fcName: string):number {
-    const selDns = this.detailsServ.detailsForm.get('dns')?.value;
-    const mod = dnsUtil.filter(x => x.dns == selDns).map(x => x[fcName + "Mod"]);
-    if (selDns) {
-      if (mod[0] != undefined) {
-        return mod[0];
-      }
-      return 0;
-    }
-    return 0;
-  }
 
 }

@@ -40,7 +40,6 @@ export class ItemsComponent implements OnInit {
     const sum = this.items.value
     .filter((x: { elhelyezes: string; })=>x.elhelyezes == 'Viselt')
     .reduce((prev: number, next: { pancel: string | number; }) => prev + +next.pancel, 0);
-    console.log(sum)
     this.s.pancel = sum;
   }
 
@@ -124,7 +123,6 @@ export class ItemsComponent implements OnInit {
     this.items.valueChanges.subscribe(()=>
       this.getHelyek(),
       this.getPancel(),
-      console.log('yes')
     );
   }
 }

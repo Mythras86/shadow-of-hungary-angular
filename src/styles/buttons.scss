@@ -22,3 +22,21 @@ button:disabled {
   background-color: rgba(0, 0, 0, 0.8);
   padding: 1rem;
 }
+
+.buttonYes {
+  @extend .bg-green;
+  @extend .color-white;
+  @extend .pad03;
+}
+
+.buttonNo {
+  @extend .bg-red;
+  @extend .color-white;
+  @extend .pad03;
+}
+
+.buttonOptions {
+  @extend .bg-orange;
+  @extend .color-white;
+  @extend .pad03;
+}

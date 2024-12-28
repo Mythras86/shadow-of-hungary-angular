@@ -1,33 +1,30 @@
 @if (s.mainCharForm) {
 
-  <h1>yes</h1>
-  <h2>yes</h2>
-  <h3>yes</h3>
-
   <form [formGroup]="s.mainCharForm">
 
     @if (s.filter == '' || s.filter ==  'Jellemzők') {
-      <app-details></app-details>
+      <h1>Jellemzők</h1>
+      <app-details class="pageResize"></app-details>
     }
     @if (s.filter == '' || s.filter ==  'Erőforrások') {
       <h1>Erőforrások</h1>
-      <app-resources></app-resources>
+      <app-resources class="pageResize"></app-resources>
     }
     @if (s.filter == '' || s.filter ==  'Tulajdonságok') {
       <h1>Tulajdonságok</h1>
-      <app-attributes></app-attributes>
+      <app-attributes class="pageResize"></app-attributes>
     }
     @if (s.filter == '' || s.filter ==  'Szakértelmek') {
       <h1>Szakértelmek</h1>
-      <app-skills></app-skills>
+      <app-skills class="pageResize"></app-skills>
     }
     @if (s.filter == '' || s.filter ==  'Állapotjelző') {
       <h1>Állapotjelző</h1>
-      <app-status></app-status>
+      <app-status class="pageResize"></app-status>
     }
     @if (s.filter == '' || s.filter ==  'Eszközök') {
       <h1>Eszközök</h1>
-      <app-items></app-items>
+      <app-items class="pageResize"></app-items>
     }
 
   </form>

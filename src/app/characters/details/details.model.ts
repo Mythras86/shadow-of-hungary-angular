@@ -1,17 +1,18 @@
 import { AbstractControl, FormGroup } from "@angular/forms";
 
 export interface DetailsModel {
+  //alapjellemzők
+  dns:string,
+  szuletesiNev: string,
+  szuletesiDatum: Date,
+  szuletesiNem: string,
+  anyanyelv: string,
   //szöveges
-  teljesnev: string,
   becenev:string,
   alnev:string,
   testalkat:string,
   hajstilus:string,
   //értékválasztó
-  nem: string,
-  dns:string,
-  anyanyelv: string,
-  eletkor:number,
   magassag:number,
   testsuly:number,
   //szín
@@ -33,16 +34,18 @@ export interface DetailsModel {
 export interface DetailsFG extends FormGroup {
   value: DetailsModel;
   controls: {
-    teljesnev: AbstractControl,
+    //alapjellemzők
+    dns:AbstractControl,
+    szuletesiNem: AbstractControl,
+    szuletesiDatum:AbstractControl,
+    szuletesiNev: AbstractControl,
+    anyanyelv: AbstractControl,
+    //szöveges
     becenev:AbstractControl,
     alnev:AbstractControl,
     testalkat:AbstractControl,
     hajstilus:AbstractControl,
     //értékválasztó
-    nem: AbstractControl,
-    dns:AbstractControl,
-    anyanyelv: AbstractControl,
-    eletkor:AbstractControl,
     magassag:AbstractControl,
     testsuly:AbstractControl,
     //szín

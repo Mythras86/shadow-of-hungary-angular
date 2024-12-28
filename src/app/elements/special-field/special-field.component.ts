@@ -9,14 +9,14 @@ export class SpecialFieldComponent implements OnInit {
 
   constructor() {
     this.fieldsUtil = [
-      {nev: 'karma', egyseg: '&#x262F;'},
-      {nev: 'toke', egyseg: 'N&#165;'},
-      {nev: 'esszencia', egyseg: '&#8364;'},
-      {nev: 'pancel', egyseg: '&#9820;'},
-      {nev: 'szint', egyseg: '&starf;'},
-      {nev: 'sebzes', egyseg: '&#9876;'},
-      {nev: 'suly', egyseg: 'Kg'},
-      {nev: 'akcio', egyseg: 'AP'},
+      {nev: 'karma', egyseg: '&#x262F;', hatter: 'bg-purple'},
+      {nev: 'toke', egyseg: 'N&#165;', hatter: 'bg-orange'},
+      {nev: 'esszencia', egyseg: '&#8364;', hatter: 'bg-grey'},
+      {nev: 'pancel', egyseg: '&#9820;', hatter: 'bg-blue'},
+      {nev: 'szint', egyseg: '&starf;', hatter: 'bg-green'},
+      {nev: 'sebzes', egyseg: '&#9876;', hatter: 'bg-red'},
+      {nev: 'suly', egyseg: 'Kg', hatter: 'bg-grey'},
+      {nev: 'akcio', egyseg: 'AP', hatter: 'bg-orange'},
     ];
   }
 
@@ -25,7 +25,7 @@ export class SpecialFieldComponent implements OnInit {
   @Input() egyeniEgyseg: any;
   @Input() egyeniSzin: string = '';
 
-  @HostBinding('className') color: string = 'cwhite bg-black-teal';
+  @HostBinding('className') color: string = 'color-white bg-black-teal';
 
   fieldsUtil: Array<any> = [];
 
@@ -40,9 +40,14 @@ export class SpecialFieldComponent implements OnInit {
     }
   }
 
+  getSzin(tipus: string): string {
+    const hatter = this.fieldsUtil.filter(x=> x.nev == tipus).map(x=> x.hatter)[0];
+    return hatter;
+  }
+
   ngOnInit(): void {
     this.getEgyseg();
-    this.color = 'cwhite ' + this.tipus;
+    this.color = 'color-white ' + this.getSzin(this.tipus);
   }
 
 }

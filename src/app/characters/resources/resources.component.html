@@ -1,19 +1,22 @@
-<div class="fixFlex flexCont" style="--w: 100%" [formGroup]="s.resourcesForm" *ngIf="s.resourcesForm">
+@if (s.resourcesForm) {
 
   @for (resTipus of resTipusok; track $index) {
 
     @for (res of resUtil; track res.nev) {
       @if (resTipus == res.tipus) {
-        <div class="bg-black-white fixFlex flexCont" style="--w: 50%">
-          <div class="pad03 fwhite fixFlex center" style="--w: 50%">{{res.nev}}</div>
+
+        <div class="flexContNoWrap">
+          <div class="pad03 bg-black-white color-white fixFlex" style="--w: 50%">{{res.nev}}</div>
+
           <app-special-field class="fixFlex" style="--w: 50%"
           [ertek]="s.getFc(res.fcName)?.value"
           [tipus]="res.tipus"
           ></app-special-field>
         </div>
+
       }
     }
 
   }
 
-</div>
+}
